@@ -2,6 +2,29 @@ body {
   background-color: black;
   /* position:fixed; */
 }
+/* Add these styles for the construction tag */
+.construction-tag {
+  background-color: #f44336; /* Choose your desired background color */
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  width: 250px; /* Adjust the width as needed */
+}
+
+/* Add this media query to adjust the tag for smaller screens if necessary */
+@media (max-width: 767px) {
+  .construction-tag {
+    font-size: 18px;
+    width: 200px; /* Adjust the width for smaller screens */
+  }
+}
+
 
 .circle {
     border-radius: 50%;
