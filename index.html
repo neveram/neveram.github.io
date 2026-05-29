@@ -1,132 +1,1125 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:site_name" content="Abhiram Yenugadhati"/>
-    <meta property="og:image" content="IMG_2800.jpg">
-
-    <!-- Linkedin Details -->
-    <meta name="description" content="Abhiram's Personal Website" />
-    <meta name="title" property="og:title" content="Abhiram Yenugadhati" />
-    <meta property="og:type" content="Website" />
-    <meta name="image" property="og:image" content="https://github.com/neveram/neveram.github.io/blob/main/IMG_2800.jpg" />
-    <meta name="description" property="og:description" content="Abhiram's Personal Website" />
-    <meta name="author" content="Abhiram Yenugadhati" />
-    <!-- End Linkedin Details -->
-
-
-    <!-- Bootstra -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
-
-    <!-- <link rel="apple-touch-icon" sizes="57x57" href="favicon_io/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon_io/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon_io/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon_io/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon_io/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon_io/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon_io/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon_io/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon_io/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon_io/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon_io/ms-icon-144x144.png"> -->
-
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" href="favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-    <meta name="theme-color" content="#ffffff">
-
-    <title>Abhiram Yenugadhati</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120900637-1"></script>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abhiram Yenugadhati | AI/ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-120900637-1');
-    </script> -->
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        doto: ['Doto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#F4F4F0',
+                            dark: '#0A0A0A',
+                        }
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-color: #F8F8F8;
+            --text-color: #0A0A0A;
+            --border-color: rgba(0, 0, 0, 0.2);
+            --hover-bg: rgba(0, 0, 0, 0.05);
+            --pattern-color: rgba(0, 0, 0, 0.1);
+            --accent-primary: #0066FF;
+            --accent-secondary: #00CCAA;
+            --nav-edge-color: #0066FF;
+            --nav-edge-style: solid;
+        }
+        .dark {
+            --bg-color: #0A0A0A;
+            --text-color: #F8F8F8;
+            --border-color: rgba(255, 255, 255, 0.15);
+            --hover-bg: rgba(255, 255, 255, 0.05);
+            --pattern-color: rgba(255, 255, 255, 0.1);
+            --accent-primary: #00FFAA;
+            --accent-secondary: #0088FF;
+            --nav-edge-color: #00FFAA;
+            --nav-edge-style: dashed;
+        }
 
-  </head>
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at center, var(--pattern-color) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            background-attachment: fixed;
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            cursor: none;
+            overflow-x: hidden;
+        }
 
-  <body>
-	  
-    <div class = "row center center-cell">
-      <div class = "col-md-6" align="center">
-        <!-- Name -->
-        <h1> Abhiram Yenugadhati </h1>
-	<!-- Add this div for the construction tag -->
-	<div class="construction-tag">
-	  <p>Site under construction</p>
-	</div>
-        <div>
-          <!-- Linkedin -->
-          <a href="https://www.linkedin.com/in/abhiram-yenuga/">
-            <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
-            <!-- Github -->
-          <a href="https://github.com/neveram">
-            <img src="https://img.icons8.com/fluent/48/000000/github.png"/>
-          </a>
-            <!-- Instagram -->
-          <a href="https://www.instagram.com/nevahram/">
-            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/>
-          </a>
-          </a>
-          <!-- Resume -->
-          <a href="Resume_Abhiram_Yenugadhati.pdf">
-            <img src="https://img.icons8.com/fluent/48/000000/open-resume.png"/>
-          </a>
-	<!-- Spotify -->
-          <a href="https://open.spotify.com/user/z5oyu5cdmpywmwlculmng0hiq">
-            <img src="https://img.icons8.com/fluent/48/000000/spotify.png"/>
-          </a>
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.03) 50%, rgba(0,0,0,0.03));
+            background-size: 100% 4px;
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 150;
+        }
+        .dark .scanlines {
+            background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02));
+            background-size: 100% 4px;
+        }
+
+        .grid-border {
+            border-color: var(--border-color);
+        }
+
+        :root {
+            --sb-track: var(--bg-color);
+            --sb-thumb-color: #0066FF;
+            --sb-thumb-hover: #0088FF;
+        }
+        .dark {
+            --sb-track: #0A0A0F;
+            --sb-thumb-color: #00FFAA;
+            --sb-thumb-hover: #33FFBB;
+        }
+
+        ::-webkit-scrollbar {
+            width: 24px;
+            background-color: var(--sb-track);
+            border-left: 1px solid var(--border-color);
+        }
+        ::-webkit-scrollbar-track {
+            background-color: var(--sb-track);
+            background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(128, 128, 128, 0.08) 4px, rgba(128, 128, 128, 0.08) 8px);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--sb-thumb-color);
+            border: 5px solid var(--sb-track);
+            background-clip: padding-box;
+            border-radius: 0px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--sb-thumb-hover);
+        }
+
+        * { cursor: none !important; }
+
+        body.modal-open { overflow: hidden; }
+
+        .game-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px -10px var(--hover-bg);
+            border-color: var(--accent-primary);
+            z-index: 10;
+        }
+
+        .btn-cyber {
+            --cut: 12px;
+            position: relative;
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-cyber.icon-btn { --cut: 8px; }
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--text-color);
+            z-index: -1;
+            transform: translateX(-101%);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .btn-cyber::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-primary);
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+        .btn-cyber:hover {
+            color: var(--bg-color);
+            border-color: var(--text-color);
+            animation: btn-shake 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+        .btn-cyber:hover::before { transform: translateX(0); }
+        .btn-cyber:hover::after { animation: btn-glitch-layer 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+        @keyframes btn-shake {
+            0% { transform: translate(0) skew(0deg); }
+            20% { transform: translate(-2px, 1px) skew(-2deg); }
+            40% { transform: translate(2px, -1px) skew(2deg); }
+            60% { transform: translate(-1px, 2px) skew(-1deg); }
+            80% { transform: translate(1px, -2px) skew(1deg); }
+            100% { transform: translate(0) skew(0deg); }
+        }
+        @keyframes btn-glitch-layer {
+            0% { opacity: 1; transform: translate(-4px, 2px); clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); background: var(--accent-primary); }
+            20% { opacity: 1; transform: translate(4px, -2px); clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%); background: var(--accent-secondary); }
+            40% { opacity: 1; transform: translate(-2px, 2px); clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%); background: var(--accent-primary); }
+            60% { opacity: 1; transform: translate(2px, -2px); clip-path: polygon(0 30%, 100% 30%, 100% 40%, 0 40%); background: var(--text-color); }
+            80% { opacity: 1; transform: translate(-4px, 2px); clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%); background: var(--accent-secondary); }
+            100% { opacity: 0; transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        .btn-cyber .icon-box {
+            background: var(--hover-bg);
+            border-left: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .btn-cyber:hover .icon-box {
+            background: transparent;
+            border-left-color: var(--bg-color);
+        }
+
+        .tech-corners {
+            position: relative;
+            padding: 8px;
+            background: var(--bg-color);
+        }
+        .tech-corners::before, .tech-corners::after {
+            content: '';
+            position: absolute;
+            width: 16px; height: 16px;
+            border: 2px solid var(--accent-primary);
+            pointer-events: none;
+            z-index: 20;
+            transition: all 0.3s ease;
+        }
+        .tech-corners::before { top: 0px; left: 0px; border-right: none; border-bottom: none; }
+        .tech-corners::after { bottom: 0px; right: 0px; border-left: none; border-top: none; }
+        .group:hover .tech-corners::before { width: 24px; height: 24px; top: -2px; left: -2px; }
+        .group:hover .tech-corners::after { width: 24px; height: 24px; bottom: -2px; right: -2px; }
+
+        .cyber-stripes {
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                var(--hover-bg) 10px,
+                var(--hover-bg) 11px
+            );
+        }
+
+        .text-accent { color: var(--accent-primary); }
+        .hover-accent:hover { color: var(--accent-primary); }
+        .text-glow-bg { text-shadow: 0 0 40px color-mix(in srgb, var(--accent-primary) 20%, transparent); }
+
+        .editorial-title {
+            font-size: clamp(4rem, 12vw, 10rem);
+            line-height: 0.85;
+        }
+        .text-outline {
+            -webkit-text-stroke: 2px var(--text-color);
+            color: transparent;
+        }
+
+        .cyber-tag {
+            clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+        }
+        .tag-primary { background: var(--accent-primary); color: var(--bg-color); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.active { opacity: 1; transform: translateY(0); }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+
+        .text-gradient-warm { background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient-cool { background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .marquee-mask {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 0.3s ease;
+        }
+
+        #custom-cursor {
+            position: fixed;
+            width: 20px; height: 20px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.3s;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+        #custom-cursor.hover { width: 50px; height: 50px; border-color: var(--accent-secondary); }
+
+        .nav-item {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active {
+            border-color: var(--nav-edge-color);
+            border-style: var(--nav-edge-style);
+            background: var(--hover-bg);
+        }
+
+        #sakura-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 140; overflow: hidden; }
+        .sakura-wrapper { position: absolute; top: -10%; animation: sakura-fall linear infinite; }
+        .sakura-sway { animation: sakura-sway ease-in-out infinite alternate; }
+        .sakura-petal { width: 12px; height: 12px; background: var(--accent-primary); opacity: 0.4; border-radius: 50% 0 50% 0; animation: sakura-spin linear infinite; }
+        .dark .sakura-petal { background: var(--accent-primary); opacity: 0.3; }
+        @keyframes sakura-fall { 0% { transform: translateY(-10vh) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
+        @keyframes sakura-sway { 0% { transform: translateX(-30px); } 100% { transform: translateX(30px); } }
+        @keyframes sakura-spin { 0% { transform: rotateZ(0deg) rotateY(0deg); } 100% { transform: rotateZ(360deg) rotateY(180deg); } }
+
+        .cinematic-slice { background-size: cover; background-position: center; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="antialiased font-sans">
+    <div class="scanlines"></div>
+    <div id="custom-cursor"></div>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[150] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" style="background-color: var(--bg-color);">
+        <div class="flex flex-col items-center space-y-8">
+            <a href="#home" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">HOME</a>
+            <a href="#about" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">ABOUT</a>
+            <a href="#works" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">WORKS</a>
+            <a href="#experience" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">EXPERIENCE</a>
+            <a href="#skills" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">SKILLS</a>
+            <a href="#resume" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">RESUME</a>
         </div>
-        <!-- Close Column 2 -->
-          <!-- Facebook Account -->
-          <!-- <a href="https://www.facebook.com/">
-            <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/>
-          </a>
-           -->
-      </div>
-
-      <div class = "col-md-6">
-        <!-- Faded Picture -->
-        <div class="circle">
-          <img src="IMG_2800.jpg">
-        </div>
-        <!-- <div class = "image-blurred-edge"></div> -->
-      </div>
-
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <a href="https://icons8.com"></a>
-    <!-- <a href="https://icons8.com/icon/uLWV5A9vXIPu/facebook" >Facebook icon by Icons8</a> -->
-    <!-- <a href="https://icons8.com/icon/Xy10Jcu1L2Su/instagram" >Instagram icon by Icons8</a> -->
-    <!-- <a href="https://icons8.com/icon/13930/linkedin" >LinkedIn icon by Icons8</a> -->
-    <!-- <a href="https://icons8.com/icon/AZOZNnY73haj/github" >GitHub icon by Icons8</a> -->
-    <!-- <a href="https://icons8.com/icon/OExBsk632jtj/download-resume" >Download Resume icon by Icons8</a> -->
-	<!-- <script>
-		(function(d) {
-			window['recime-bot'] = '{"id":"d8571d81ff86dfd1721e67f77a8fa0d3","meta":{"user":{"firstName":"Abhiram","lastName":"Yenugadhati"}}}';
-			var s = d.createElement('script');
-			s.setAttribute('id', 'recime-chatbot-script');
-			s.setAttribute('src', 'https://headchat.recime.io/shim.js');
-			s.setAttribute('async', 'async');
-			d.getElementsByTagName('body')[0].appendChild(s);
-		})(document);
-	</script> -->
-  </body>
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-[160] border-b grid-border transition-all duration-300" style="background-color: var(--bg-color);">
+        <div class="max-w-[1800px] mx-auto px-5 md:px-8 py-5 flex items-center justify-between border-x grid-border relative">
+            <div class="absolute top-2 left-2 text-[8px] opacity-30 font-doto">+</div>
+            <div class="absolute bottom-2 right-2 text-[8px] opacity-30 font-doto">+</div>
+
+            <div class="flex items-center gap-6 md:gap-10">
+                <a href="#home" class="block flex-shrink-0 cursor-none group z-10 relative">
+                    <span class="text-2xl font-doto font-bold tracking-tight group-hover:text-accent transition-colors">AY</span>
+                </a>
+
+                <div id="nav-wrapper" class="relative items-center hidden lg:flex font-doto">
+                    <div id="nav-pill" class="absolute h-[38px] opacity-0 pointer-events-none z-0"></div>
+                    <div class="flex space-x-2 relative z-10">
+                        <a href="#home" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">HOME</a>
+                        <a href="#about" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">ABOUT</a>
+                        <a href="#works" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">WORKS</a>
+                        <a href="#experience" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">EXPERIENCE</a>
+                        <a href="#skills" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">SKILLS</a>
+                        <a href="#resume" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">RESUME</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center ml-auto gap-4 relative z-10">
+                <button onclick="toggleTheme()" class="theme-toggle-btn btn-cyber icon-btn z-[160]">
+                    <svg id="sun-icon" class="hidden dark:block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                    <svg id="moon-icon" class="block dark:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+
+                <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-[5px] btn-cyber icon-btn z-[160]">
+                    <span class="w-4 h-[2px] bg-current transition-all duration-300"></span>
+                    <span class="w-4 h-[2px] bg-current transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-20 max-w-[1800px] mx-auto border-x grid-border pt-20">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex flex-col border-b grid-border overflow-hidden bg-[var(--text-color)]">
+
+            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-20 dark:opacity-40 mix-blend-luminosity">
+                    <source src="https://cdn.pixabay.com/video/2020/05/24/40092-424754593_large.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 z-10 bg-gradient-to-r from-[var(--bg-color)] via-[var(--bg-color)]/70 to-[var(--bg-color)]"></div>
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-[var(--bg-color)] via-transparent to-[var(--bg-color)]/20"></div>
+            </div>
+
+            <!-- Cinematic Background -->
+            <div id="hero-cinematic-bg" class="absolute inset-0 z-10 pointer-events-none flex opacity-0 transition-opacity duration-300">
+                <div class="absolute inset-0 z-10 bg-gradient-to-r from-[var(--bg-color)] via-[var(--bg-color)]/20 to-[var(--bg-color)]/90"></div>
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-[var(--bg-color)] via-transparent to-transparent"></div>
+                <div class="absolute inset-0 z-10 bg-[var(--bg-color)]/40 backdrop-blur-[2px]"></div>
+                <div class="cinematic-slice w-1/4 h-full relative" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="cinematic-slice w-1/4 h-full relative" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="cinematic-slice w-1/4 h-full relative" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="cinematic-slice w-1/4 h-full relative" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop');"></div>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center px-5 md:px-8 py-20 relative z-20">
+                <div class="absolute top-8 left-8 text-[10px] font-doto opacity-40 text-[var(--text-color)]">// SYSTEM.INIT</div>
+                <div class="absolute bottom-8 right-8 text-[10px] font-doto opacity-40 text-[var(--text-color)]">[ V.1.0.26 ]</div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-end">
+
+                    <!-- Left: Name & Hook -->
+                    <div class="lg:col-span-8">
+                        <h1 class="flex flex-col items-start text-left relative z-20">
+                            <span class="text-sm md:text-xl font-bold tracking-[0.3em] uppercase font-doto text-accent mb-4 block">// Engineering Intelligence at Scale</span>
+                            <span class="font-heading uppercase font-bold editorial-title text-[var(--text-color)] relative z-0 text-glow-bg leading-none">ABHIRAM</span>
+                            <span class="font-heading uppercase font-bold editorial-title text-outline relative z-10 -mt-[0.08em] text-glow-bg leading-none">YENUGADHATI</span>
+                        </h1>
+                        <div class="mt-8 md:mt-12 flex items-center gap-6">
+                            <div class="w-12 h-[2px] bg-[var(--accent-primary)]"></div>
+                            <p class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase font-bold font-doto text-accent text-glow-bg">AI/ML Engineer | Data Systems | Distributed Computing</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: About Snippet -->
+                    <div class="lg:col-span-4 lg:border-l grid-border lg:pl-12 lg:pb-4">
+                        <div class="flex justify-between items-start mb-8 relative">
+                            <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold font-doto">// ABOUT ME</h2>
+                        </div>
+                        <div class="text-sm md:text-base leading-relaxed space-y-6 font-medium relative z-20">
+                            <p>I am an <span class="font-bold text-accent">AI/ML Engineer</span> building intelligent data systems that process petabytes and power machine learning at scale.</p>
+                            <p>I design and implement distributed pipelines, ML infrastructure, and data platforms that turn raw data into production-ready intelligence.</p>
+                            <p>From <span class="font-bold text-accent">Amazon AGI</span> to <span class="font-bold text-accent">Apple</span>, I build the systems that make AI possible.</p>
+                        </div>
+                        <div class="mt-12 pt-8 border-t grid-border space-y-3 relative z-20">
+                            <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-[var(--accent-primary)] mt-[-1px]"></div>
+                            <p class="text-[9px] md:text-[10px] tracking-[0.2em] opacity-50 uppercase font-bold font-doto">LET'S CONNECT</p>
+                            <a href="mailto:abhiramyenugadhati@gmail.com" class="block text-lg md:text-xl font-bold font-heading hover:text-accent hover:italic transition-all uppercase underline decoration-2 underline-offset-4 break-all">abhiramyenugadhati@gmail.com</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Bio Section -->
+        <section id="about" class="border-b grid-border relative bg-[var(--bg-color)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <div class="lg:col-span-4 p-8 md:p-12 border-b lg:border-b-0 lg:border-r grid-border reveal">
+                    <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold font-doto">// PHILOSOPHY</h2>
+                </div>
+                <div class="lg:col-span-8 p-8 md:p-12 reveal">
+                    <p class="text-3xl md:text-5xl lg:text-6xl font-doto italic leading-tight mb-12">
+                        I engineer the data systems and ML infrastructure that power artificial intelligence at petabyte scale.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-12 text-sm md:text-base font-medium leading-relaxed">
+                        <div class="space-y-6">
+                            <p>
+                                My work focuses on building <span class="font-bold text-accent">scalable data pipelines</span> and <span class="font-bold text-accent">ML platforms</span> that handle petabyte-scale workloads with production reliability.
+                            </p>
+                            <p>
+                                I prioritize performance, cost efficiency, and automation — reducing processing times from days to hours and enabling science teams to iterate faster.
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <p>
+                                At <span class="font-bold">Amazon AGI</span>, I built data filtering frameworks that reduced processing time by 90% and unblocked critical AI training deadlines.
+                            </p>
+                            <p>
+                                I've contributed to the ingestion of 160+ datasets (4+ PB) and designed deterministic partitioning solutions in Spark that enabled 5x larger dataset handling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="border-b grid-border bg-[var(--bg-color)]">
+            <div class="p-8 md:p-12 border-b grid-border reveal relative">
+                <div class="absolute right-12 top-12 text-[10px] font-doto opacity-30">[ REC ]</div>
+                <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 mb-6 font-bold font-doto">// KEY PROJECTS</h2>
+                <h3 class="text-5xl md:text-7xl font-doto font-bold tracking-tighter uppercase"><span class="text-accent">Systems That</span> <br><span class="font-doto italic font-normal normal-case">Scale Intelligence</span></h3>
+            </div>
+
+            <!-- Data & ML Category -->
+            <div class="p-4 md:p-6 bg-[var(--text-color)] text-[var(--bg-color)] border-b grid-border text-center text-xs md:text-sm font-bold tracking-[0.2em] uppercase font-doto reveal">
+                [ Data Engineering & ML Infrastructure ]
+            </div>
+
+            <div class="grid grid-cols-1 border-b grid-border">
+                <!-- Project 1: AGI Data Filtering -->
+                <div class="flex flex-col lg:flex-row h-auto lg:h-[60vh] items-center border-b grid-border last:border-b-0 cyber-stripes game-card relative group">
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
+                        <div class="mb-auto">
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">PETABYTE SCALE</span>
+                        </div>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">AGI Data Filtering Framework</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Built data filtering frameworks for petabyte-scale AGI datasets, reducing processing time by 90% and unblocking science teams ahead of critical training deadlines.</p>
+
+                        <div class="flex flex-col gap-3 mb-10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon AGI</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Spark, AWS, S3 Datalake</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
+                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
+                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <div class="text-6xl md:text-8xl font-doto font-bold text-accent opacity-20">90%</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Processing Time Reduction</div>
+                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">4+ PB</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Data Processed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Spark Partitioning -->
+                <div class="flex flex-col lg:flex-row-reverse h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-l grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
+                        <div class="mb-auto">
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">DISTRIBUTED SYSTEMS</span>
+                        </div>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">Deterministic Spark Partitioning</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Designed a scalable deterministic partitioning solution that reduced dataset processing from 48 hours to under 6 hours, enabling 5x larger dataset handling and meeting P90 24-hour delivery SLAs.</p>
+
+                        <div class="flex flex-col gap-3 mb-10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon AGI</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Apache Spark, AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
+                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
+                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <div class="text-5xl md:text-7xl font-doto font-bold text-accent opacity-20">48h→6h</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Processing Time</div>
+                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">5x</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Larger Dataset Capacity</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: CYPHAI -->
+                <div class="flex flex-col lg:flex-row h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
+                        <div class="mb-auto">
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">ML PLATFORM</span>
+                        </div>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">CYPHAI</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Distributed Machine Learning platform for Robo-cup soccer implementing microservice architecture, enabling real-time simulation (YOLOv8) and communication of Sphero robots with minimal latency.</p>
+
+                        <div class="flex flex-col gap-3 mb-10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: ML Engineer</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: PyTorch, Flask, gRPC, WebSockets</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-6">
+                            <a href="https://github.com/neveram/CYPHAI" target="_blank" rel="noopener noreferrer" class="btn-cyber pl-6 pr-0 py-0 h-10 text-[10px] font-bold tracking-[0.2em]">
+                                <span class="mr-4">View on GitHub</span>
+                                <div class="w-10 h-10 icon-box flex items-center justify-center">
+                                    <svg class="w-3.5 h-3.5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
+                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
+                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <div class="text-4xl md:text-6xl font-doto font-bold text-accent opacity-20">YOLOv8</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Real-Time Detection</div>
+                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">gRPC</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Microservice Communication</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: OSHA Automation -->
+                <div class="flex flex-col lg:flex-row-reverse h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-l grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
+                        <div class="mb-auto">
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">AUTOMATION</span>
+                        </div>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">OSHA Compliance Automation</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Designed and built end-to-end automation for OSHA compliance data freeze using AWS Glue, MWAA (Airflow), Redshift, and SES — replacing a 5-day manual process across 15 DAGs with a single orchestrated workflow.</p>
+
+                        <div class="flex flex-col gap-3 mb-10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Airflow, AWS Glue, Redshift, SES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
+                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
+                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <div class="text-5xl md:text-7xl font-doto font-bold text-accent opacity-20">15 DAGs</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Unified Orchestration</div>
+                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">5 days→1</div>
+                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Process Automation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section id="approach" class="border-b grid-border bg-[var(--bg-color)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 border-b grid-border">
+                <div class="lg:col-span-4 p-8 md:p-12 border-b lg:border-b-0 lg:border-r grid-border reveal">
+                    <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-4 font-doto">// APPROACH</h2>
+                    <h3 class="text-4xl md:text-5xl font-doto font-bold tracking-tighter uppercase"><span class="text-accent">Data into</span> <br><span class="font-doto italic font-normal normal-case">Intelligence</span></h3>
+                </div>
+                <div class="lg:col-span-8 p-8 md:p-12 reveal flex flex-col justify-center">
+                    <p class="text-xl md:text-3xl font-doto font-medium leading-relaxed mb-6">
+                        I build the infrastructure that transforms raw data into production ML systems — from ingestion to model training to deployment.
+                    </p>
+                    <p class="text-sm md:text-base font-medium leading-relaxed opacity-70">
+                        My approach focuses on scalability, reliability, and cost efficiency — engineering systems that process petabytes while meeting strict SLAs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3">
+                <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <span class="text-3xl font-serif italic block mb-8 text-accent">01</span>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Data Engineering</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Building robust pipelines that ingest, transform, and deliver data at scale with production reliability.</p>
+                    <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
+                        <li>> ETL/ELT Pipeline Design</li>
+                        <li>> Distributed Processing (Spark)</li>
+                        <li>> Data Quality & Governance</li>
+                    </ul>
+                </div>
+                <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.1s;">
+                    <span class="text-3xl font-serif italic block mb-8 text-accent">02</span>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">ML Infrastructure</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Designing the platforms and tooling that enable ML teams to train, evaluate, and deploy models efficiently.</p>
+                    <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
+                        <li>> Training Pipeline Optimization</li>
+                        <li>> Feature Engineering at Scale</li>
+                        <li>> Model Serving & Monitoring</li>
+                    </ul>
+                </div>
+                <div class="p-8 md:p-12 hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.2s;">
+                    <span class="text-3xl font-serif italic block mb-8 text-accent">03</span>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Cloud Architecture</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Orchestrating cloud-native solutions that balance performance, cost, and operational excellence.</p>
+                    <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
+                        <li>> AWS Services (Glue, SFN, Lambda)</li>
+                        <li>> Kubernetes & Docker</li>
+                        <li>> Workflow Orchestration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tools Block -->
+            <div class="border-t grid-border p-8 md:p-12 bg-[var(--text-color)] text-[var(--bg-color)] reveal relative">
+                <div class="absolute inset-0 cyber-stripes opacity-10 pointer-events-none"></div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <div class="md:col-span-1">
+                        <h4 class="text-sm font-bold tracking-[0.4em] uppercase font-doto text-accent">Tools & Stack</h4>
+                    </div>
+                    <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+                        <div>
+                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">Compute</span>
+                            <span class="block font-serif italic text-xl">Spark, Flink, Ray</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">ML</span>
+                            <span class="block font-serif italic text-xl">PyTorch, MLFlow</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">Orchestration</span>
+                            <span class="block font-serif italic text-xl">Airflow, Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="border-b grid-border bg-[var(--bg-color)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 border-b grid-border">
+                <div class="lg:col-span-4 p-8 md:p-12 border-b lg:border-b-0 lg:border-r grid-border reveal relative">
+                    <div class="absolute right-8 top-8 text-[10px] font-doto opacity-30">[ EXP ]</div>
+                    <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-4 font-doto">// CAREER LOG</h2>
+                    <h3 class="text-4xl md:text-5xl font-doto text-accent font-bold tracking-tighter uppercase">Experience</h3>
+                </div>
+                <div class="lg:col-span-8 p-8 md:p-12 reveal flex flex-col justify-center bg-[var(--hover-bg)]">
+                    <div class="border border-[var(--accent-primary)] p-6 relative bg-[var(--bg-color)]" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+                        <h4 class="text-[10px] font-doto text-accent tracking-[0.2em] font-bold uppercase mb-4 opacity-80">> CURRENT FOCUS</h4>
+                        <p class="text-sm md:text-base font-medium">
+                            Building petabyte-scale data systems and ML infrastructure at Amazon AGI. Engineering distributed pipelines that power the next generation of artificial general intelligence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs List -->
+            <div class="flex flex-col w-full">
+
+                <!-- Job 1: Amazon AGI -->
+                <div class="grid grid-cols-1 md:grid-cols-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <div class="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r grid-border flex flex-col justify-between">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-50 mb-2 font-doto">Mar 2025 – Present</span>
+                        <span class="text-sm font-heading font-bold uppercase text-accent">Amazon AGI</span>
+                    </div>
+                    <div class="md:col-span-8 p-6 md:p-8">
+                        <h4 class="text-2xl font-serif italic mb-4">Data Engineer</h4>
+                        <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
+                            <li><span class="opacity-50">></span> Built data filtering frameworks for petabyte-scale AGI datasets, 90% processing time reduction</li>
+                            <li><span class="opacity-50">></span> Designed deterministic Spark partitioning: 48h → 6h, enabling 5x larger datasets</li>
+                            <li><span class="opacity-50">></span> Led data quality assessment via AWS services delivering $4.86M in cost savings</li>
+                            <li><span class="opacity-50">></span> Contributed to ingestion of 160+ datasets (4+ PB) into S3 datalake</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2: Coinbase -->
+                <div class="grid grid-cols-1 md:grid-cols-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <div class="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r grid-border flex flex-col justify-between">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-50 mb-2 font-doto">Sep 2024 – Mar 2025</span>
+                        <span class="text-sm font-heading font-bold uppercase text-accent">Coinbase</span>
+                    </div>
+                    <div class="md:col-span-8 p-6 md:p-8">
+                        <h4 class="text-2xl font-serif italic mb-4">Data Engineer (Contract)</h4>
+                        <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
+                            <li><span class="opacity-50">></span> Built monitoring pipelines with Airflow & Snowflake for real-time violation detection across 10+ services</li>
+                            <li><span class="opacity-50">></span> Developed dashboards using SQL & Looker, improving pipeline health by 40%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3: Apple -->
+                <div class="grid grid-cols-1 md:grid-cols-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <div class="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r grid-border flex flex-col justify-between">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-50 mb-2 font-doto">Dec 2023 – Sep 2024</span>
+                        <span class="text-sm font-heading font-bold uppercase text-accent">Apple</span>
+                    </div>
+                    <div class="md:col-span-8 p-6 md:p-8">
+                        <h4 class="text-2xl font-serif italic mb-4">Software Data Engineer (Contract)</h4>
+                        <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
+                            <li><span class="opacity-50">></span> Engineered large-scale Spark jobs for ML model training pipelines (PyTorch, XGBoost)</li>
+                            <li><span class="opacity-50">></span> Built ELT pipelines monitoring 20+ data pipelines using Splunk & Grafana</li>
+                            <li><span class="opacity-50">></span> Deployed distributed SQL engine (Dremio) on Kubernetes across S3 & Snowflake</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 4: Wipro -->
+                <div class="grid grid-cols-1 md:grid-cols-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <div class="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r grid-border flex flex-col justify-between">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-50 mb-2 font-doto">Jun 2019 – Dec 2021</span>
+                        <span class="text-sm font-heading font-bold uppercase text-accent">Wipro Healthcare</span>
+                    </div>
+                    <div class="md:col-span-8 p-6 md:p-8">
+                        <h4 class="text-2xl font-serif italic mb-4">Software Engineer - Data</h4>
+                        <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
+                            <li><span class="opacity-50">></span> Built PHI anonymization pipelines leveraging NLP (SpaCy NER) for HIPAA compliance</li>
+                            <li><span class="opacity-50">></span> Developed health data portal using Python (Flask, D3.js), Docker & Postgres</li>
+                            <li><span class="opacity-50">></span> Engineered ETL pipelines in PySpark integrating 10+ data sources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32 px-8 md:px-12 border-b grid-border bg-[var(--hover-bg)]">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-20 text-center font-doto reveal">// Technical Arsenal</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+                    <!-- AI/ML -->
+                    <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners">
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">AI / ML</h4>
+                        <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
+                            <li>> PyTorch & Ray</li>
+                            <li>> MLFlow & LangChain</li>
+                            <li>> pandas & NumPy & sklearn</li>
+                            <li>> RAG Systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Engineering -->
+                    <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners" style="transition-delay: 0.1s;">
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">Data Engineering</h4>
+                        <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
+                            <li>> Spark & Kafka & Flink</li>
+                            <li>> Airflow & AWS Glue</li>
+                            <li>> Snowflake & BigQuery</li>
+                            <li>> Redshift & Postgres</li>
+                        </ul>
+                    </div>
+
+                    <!-- Infrastructure -->
+                    <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners" style="transition-delay: 0.2s;">
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">Infrastructure</h4>
+                        <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
+                            <li>> Docker & Kubernetes</li>
+                            <li>> AWS (Lambda, SFN, S3)</li>
+                            <li>> Linux & Git</li>
+                            <li>> Splunk & Grafana</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mt-16 reveal">
+                    <div class="p-6 bg-[var(--bg-color)] border grid-border tech-corners">
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 font-doto text-accent">Certifications</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Apache Airflow Champion</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">AWS Solutions Architect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume CTA Section -->
+        <section id="resume" class="py-32 px-5 md:px-8 border-b grid-border relative bg-[var(--text-color)] text-[var(--bg-color)] flex flex-col items-center justify-center text-center">
+            <div class="absolute inset-0 cyber-stripes opacity-10 pointer-events-none"></div>
+            <div class="reveal max-w-3xl relative z-10">
+                <h2 class="text-[10px] tracking-[0.5em] uppercase opacity-50 mb-8 font-bold font-doto">// DOCUMENTATION</h2>
+                <h3 class="text-5xl md:text-7xl font-doto text-accent font-bold tracking-tighter uppercase mb-10">Beyond Code</h3>
+                <p class="text-base md:text-xl font-medium leading-relaxed opacity-80 mb-12">
+                    A deeper look into my experience engineering distributed data systems, ML infrastructure, and intelligent automation at companies like Amazon, Apple, and Coinbase.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                    <a href="Assets/Abhiram-Yenugadhati-Resume.pdf" target="_blank" class="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-center btn-cyber text-[var(--text-color)] pl-6 pr-0 py-0 h-12 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 cursor-none" style="background: var(--bg-color); border-color: var(--bg-color);">
+                        <span class="mr-4">View Resume</span>
+                        <div class="w-12 h-12 icon-box flex items-center justify-center border-l-2 border-l-[var(--text-color)] bg-transparent group-hover:bg-[var(--text-color)] group-hover:text-[var(--bg-color)]">
+                            <svg class="w-5 h-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+                    </a>
+                    <a href="https://github.com/neveram" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-center btn-cyber text-[var(--text-color)] pl-6 pr-0 py-0 h-12 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 cursor-none" style="background: var(--bg-color); border-color: var(--bg-color);">
+                        <span class="mr-4">View GitHub</span>
+                        <div class="w-12 h-12 icon-box flex items-center justify-center border-l-2 border-l-[var(--text-color)] bg-transparent group-hover:bg-[var(--text-color)] group-hover:text-[var(--bg-color)]">
+                            <svg class="w-5 h-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="border-b grid-border bg-[var(--bg-color)]">
+            <div class="p-8 md:p-12 border-b grid-border reveal">
+                <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 mb-4 font-bold font-doto">// EDUCATION</h2>
+                <h3 class="text-4xl md:text-5xl font-doto font-bold tracking-tighter uppercase"><span class="text-accent">Academic</span> <br><span class="font-doto italic font-normal normal-case">Foundation</span></h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
+                    <span class="text-3xl font-serif italic block mb-4 text-accent">MS</span>
+                    <h4 class="text-xl font-heading font-bold uppercase mb-2">San Jose State University</h4>
+                    <p class="text-sm font-medium opacity-70 mb-2">Software Engineering — GPA: 3.7/4.0</p>
+                    <p class="text-xs font-doto opacity-50 uppercase tracking-wide">Jan 2022 – Dec 2023</p>
+                    <p class="text-xs font-medium opacity-60 mt-4">Enterprise Distributed Systems, Advanced Data Mining, Machine Learning</p>
+                </div>
+                <div class="p-8 md:p-12 hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.1s;">
+                    <span class="text-3xl font-serif italic block mb-4 text-accent">B.Tech</span>
+                    <h4 class="text-xl font-heading font-bold uppercase mb-2">Vardhaman College of Engineering</h4>
+                    <p class="text-sm font-medium opacity-70 mb-2">Computer Science — GPA: 3.8/4.0</p>
+                    <p class="text-xs font-doto opacity-50 uppercase tracking-wide">Aug 2015 – May 2019</p>
+                    <p class="text-xs font-medium opacity-60 mt-4">Data Structures, Data Mining, Operating Systems, Design Patterns</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <a href="mailto:abhiramyenugadhati@gmail.com" id="marquee-section" class="block py-8 md:py-12 border-b grid-border overflow-hidden bg-[var(--bg-color)] text-[var(--text-color)] relative cursor-none">
+            <div class="marquee-container flex w-[300%] md:w-[200%]">
+                <div class="animate-marquee flex whitespace-nowrap items-center text-4xl md:text-7xl font-heading font-bold uppercase tracking-tighter">
+                    <span class="mx-6 md:mx-10 transition-all">SAY HELLO!</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">LET'S COLLABORATE</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">OPEN FOR WORK</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">GET IN TOUCH</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">BUILD TOGETHER</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">SAY HELLO!</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">LET'S COLLABORATE</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">OPEN FOR WORK</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">GET IN TOUCH</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                    <span class="mx-6 md:mx-10 transition-all">BUILD TOGETHER</span> <span class="text-xl opacity-30 font-serif italic text-accent">x</span>
+                </div>
+            </div>
+
+            <div id="marquee-mask" class="absolute inset-0 bg-[var(--text-color)] pointer-events-none marquee-mask flex flex-col justify-center">
+                <div class="marquee-container flex w-[300%] md:w-[200%]">
+                    <div class="animate-marquee flex whitespace-nowrap items-center text-4xl md:text-7xl font-heading font-bold uppercase tracking-tighter">
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">SAY HELLO!</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-cool transition-all">LET'S COLLABORATE</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">OPEN FOR WORK</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-cool transition-all">GET IN TOUCH</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">BUILD TOGETHER</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">SAY HELLO!</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-cool transition-all">LET'S COLLABORATE</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">OPEN FOR WORK</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-cool transition-all">GET IN TOUCH</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                        <span class="mx-6 md:mx-10 text-gradient-warm transition-all">BUILD TOGETHER</span> <span class="text-xl font-serif italic text-[var(--bg-color)]">x</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Footer -->
+        <footer class="p-8 md:p-12 flex flex-col md:flex-row justify-between items-center text-[10px] tracking-[0.2em] font-bold uppercase font-doto bg-[var(--hover-bg)]">
+            <p class="mb-6 md:mb-0 text-center opacity-50">&copy; 2026 ABHIRAM YENUGADHATI / ALL RIGHTS RESERVED.</p>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-4">
+                <a href="https://www.linkedin.com/in/abhiram-yenuga" target="_blank" rel="noopener noreferrer" class="hover-accent">LINKEDIN</a>
+                <a href="https://github.com/neveram" target="_blank" rel="noopener noreferrer" class="hover-accent">GITHUB</a>
+                <a href="mailto:abhiramyenugadhati@gmail.com" class="hover-accent">EMAIL</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+        const btnSpans = mobileBtn.querySelectorAll('span');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.contains('opacity-100');
+            if (isOpen) {
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('modal-open');
+                btnSpans[0].style.transform = 'translateY(0) rotate(0)';
+                btnSpans[1].style.transform = 'translateY(0) rotate(0)';
+            } else {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.classList.add('modal-open');
+                btnSpans[0].style.transform = 'translateY(3px) rotate(45deg)';
+                btnSpans[1].style.transform = 'translateY(-3px) rotate(-45deg)';
+            }
+        }
+
+        mobileBtn.addEventListener('click', toggleMobileMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // --- Custom Cursor ---
+        const cursor = document.getElementById('custom-cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.querySelectorAll('a, button, .game-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // --- Intersection Observer for Reveals ---
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .fade-up').forEach(el => observer.observe(el));
+
+        // --- Marquee Magnifying Glass ---
+        const marqueeSection = document.getElementById('marquee-section');
+        const marqueeMask = document.getElementById('marquee-mask');
+
+        if (marqueeSection && marqueeMask) {
+            marqueeSection.addEventListener('mousemove', (e) => {
+                const rect = marqueeSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xPercent = (x / rect.width) * 100;
+                const yPercent = (y / rect.height) * 100;
+                marqueeMask.style.clipPath = `circle(80px at ${xPercent}% ${yPercent}%)`;
+            });
+            marqueeSection.addEventListener('mouseleave', () => {
+                marqueeMask.style.clipPath = 'circle(0% at 50% 50%)';
+            });
+        }
+
+        // --- Cinematic Sequence ---
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        let isCinematicPlaying = false;
+
+        async function triggerCinematic() {
+            if (isCinematicPlaying) return;
+            isCinematicPlaying = true;
+
+            const isDark = document.documentElement.classList.contains('dark');
+            const bgContainer = document.getElementById('hero-cinematic-bg');
+            const slices = document.querySelectorAll('.cinematic-slice');
+
+            bgContainer.style.opacity = '1';
+
+            slices.forEach(s => {
+                s.style.filter = isDark ? 'none' : 'invert(1) hue-rotate(180deg) brightness(1.2)';
+                s.style.transform = 'scale(1.05)';
+            });
+            await sleep(150);
+
+            slices.forEach(s => {
+                s.style.filter = isDark ? 'invert(1) hue-rotate(90deg)' : 'invert(0.2) hue-rotate(-90deg) contrast(2)';
+                s.style.transform = 'scale(1)';
+            });
+            await sleep(100);
+
+            slices.forEach(s => {
+                s.style.filter = isDark ? 'brightness(0.3) contrast(1.5) hue-rotate(180deg)' : 'invert(1) brightness(1.5) contrast(1.2)';
+            });
+            await sleep(150);
+
+            slices[0].style.filter = isDark ? 'sepia(0.6) hue-rotate(-15deg) saturate(1.5)' : 'invert(1) sepia(0.4) hue-rotate(-15deg) saturate(1.5) brightness(1.1)';
+            slices[0].style.transform = 'scale(1.02) translateY(-1%)';
+            slices[1].style.filter = isDark ? 'brightness(0.4) contrast(1.3) hue-rotate(200deg)' : 'invert(1) hue-rotate(180deg) saturate(1.5) brightness(1.1)';
+            slices[1].style.transform = 'scale(1.02) translateY(1%)';
+            slices[2].style.filter = isDark ? 'grayscale(100%) contrast(1.4)' : 'invert(1) grayscale(100%) contrast(1.2) brightness(1.2)';
+            slices[2].style.transform = 'scale(1.02) translateY(-0.5%)';
+            slices[3].style.filter = isDark ? 'saturate(1.5) contrast(1.1)' : 'invert(1) saturate(2) brightness(1.1)';
+            slices[3].style.transform = 'scale(1.02) translateY(0.5%)';
+
+            await sleep(2500);
+
+            slices.forEach(s => {
+                s.style.filter = isDark ? 'brightness(2)' : 'brightness(2) invert(1)';
+                s.style.transform = 'scale(1.1)';
+            });
+            await sleep(100);
+
+            bgContainer.style.opacity = '0';
+            await sleep(300);
+
+            slices.forEach(s => {
+                s.style.filter = 'none';
+                s.style.transform = 'scale(1)';
+            });
+
+            isCinematicPlaying = false;
+        }
+
+        // --- Particle Effect ---
+        function createParticles() {
+            const container = document.createElement('div');
+            container.id = 'sakura-container';
+            document.body.appendChild(container);
+
+            const petalCount = 25;
+
+            for (let i = 0; i < petalCount; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'sakura-wrapper';
+
+                const left = Math.random() * 100;
+                const fallDuration = 8 + Math.random() * 7;
+                const fallDelay = Math.random() * -15;
+
+                wrapper.style.left = `${left}%`;
+                wrapper.style.animationDuration = `${fallDuration}s`;
+                wrapper.style.animationDelay = `${fallDelay}s`;
+
+                const sway = document.createElement('div');
+                sway.className = 'sakura-sway';
+                const swayDuration = 2 + Math.random() * 3;
+                sway.style.animationDuration = `${swayDuration}s`;
+                sway.style.animationDelay = `${Math.random() * -5}s`;
+
+                const petal = document.createElement('div');
+                petal.className = 'sakura-petal';
+                const spinDuration = 3 + Math.random() * 5;
+                const scale = 0.3 + Math.random() * 0.5;
+                const opacity = 0.3 + Math.random() * 0.4;
+
+                petal.style.animationDuration = `${spinDuration}s`;
+                petal.style.transform = `scale(${scale})`;
+                petal.style.opacity = opacity;
+
+                sway.appendChild(petal);
+                wrapper.appendChild(sway);
+                container.appendChild(wrapper);
+            }
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            createParticles();
+            setTimeout(triggerCinematic, 1000);
+        });
+    </script>
+</body>
 </html>
