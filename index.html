@@ -244,6 +244,38 @@
         }
         .tag-primary { background: var(--accent-primary); color: var(--bg-color); }
 
+        /* Project visual frames */
+        .proj-visual {
+            background-color: #0A0A0F;
+            background-image:
+                radial-gradient(circle at center, rgba(255,255,255,0.08) 1px, transparent 1px),
+                linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+            background-size: 14px 14px, 100% 100%;
+            color: #F4F4F0;
+            position: relative;
+            overflow: hidden;
+        }
+        .proj-visual::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+            pointer-events: none;
+        }
+        .proj-visual svg { display: block; width: 100%; height: 100%; }
+        .proj-visual .pv-wire { stroke: rgba(255,255,255,0.85); stroke-width: 1; fill: none; }
+        .proj-visual .pv-wire-dim { stroke: rgba(255,255,255,0.35); stroke-width: 0.8; fill: none; }
+        .proj-visual .pv-fill-soft { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.4); stroke-width: 0.8; }
+        .proj-visual .pv-accent { fill: var(--accent-primary); }
+        .proj-visual .pv-accent-stroke { stroke: var(--accent-primary); stroke-width: 1.2; fill: none; }
+        .proj-visual .pv-readout { font-family: 'Doto', monospace; font-size: 7px; fill: var(--accent-primary); letter-spacing: 0.05em; }
+        .proj-visual .pv-readout-dim { font-family: 'Doto', monospace; font-size: 7px; fill: rgba(0,255,170,0.5); letter-spacing: 0.05em; }
+        .proj-visual .pv-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; font-weight: 700; fill: rgba(255,255,255,0.7); letter-spacing: 0.25em; text-transform: uppercase; }
+        .proj-visual .pv-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; fill: #fff; letter-spacing: 0.15em; text-transform: uppercase; }
+        @keyframes pv-pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .proj-visual .pv-pulse { animation: pv-pulse 2.5s ease-in-out infinite; }
+        @keyframes pv-flow { 0% { stroke-dashoffset: 20; } 100% { stroke-dashoffset: 0; } }
+        .proj-visual .pv-flow { stroke-dasharray: 4 4; animation: pv-flow 1.2s linear infinite; }
+
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -311,6 +343,7 @@
             <a href="#works" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">WORKS</a>
             <a href="#experience" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">EXPERIENCE</a>
             <a href="#skills" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">SKILLS</a>
+            <a href="#blog" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">BLOG</a>
             <a href="#resume" class="mobile-nav-item text-4xl font-doto font-bold uppercase tracking-tight hover:text-accent transition-opacity">RESUME</a>
         </div>
     </div>
@@ -334,6 +367,7 @@
                         <a href="#works" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">WORKS</a>
                         <a href="#experience" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">EXPERIENCE</a>
                         <a href="#skills" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">SKILLS</a>
+                        <a href="#blog" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">BLOG</a>
                         <a href="#resume" class="nav-item px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-bold">RESUME</a>
                     </div>
                 </div>
@@ -393,7 +427,7 @@
                         </h1>
                         <div class="mt-8 md:mt-12 flex items-center gap-6">
                             <div class="w-12 h-[2px] bg-[var(--accent-primary)]"></div>
-                            <p class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase font-bold font-doto text-accent text-glow-bg">AI/ML Engineer | Data Systems | Distributed Computing</p>
+                            <p class="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase font-bold font-doto text-accent text-glow-bg">ML Systems Engineer | LLM Pre/Post-Training | Inference Engineering</p>
                         </div>
                     </div>
 
@@ -403,9 +437,9 @@
                             <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold font-doto">// ABOUT ME</h2>
                         </div>
                         <div class="text-sm md:text-base leading-relaxed space-y-6 font-medium relative z-20">
-                            <p>I am an <span class="font-bold text-accent">AI/ML Engineer</span> building intelligent data systems that process petabytes and power machine learning at scale.</p>
-                            <p>I design and implement distributed pipelines, ML infrastructure, and data platforms that turn raw data into production-ready intelligence.</p>
-                            <p>From <span class="font-bold text-accent">Amazon AGI</span> to <span class="font-bold text-accent">Apple</span>, I build the systems that make AI possible.</p>
+                            <p>I'm an <span class="font-bold text-accent">ML Systems Engineer</span> with 5+ years building resilient distributed systems and petabyte-scale AI data pipelines for <span class="font-bold text-accent">LLM pre-training and post-training</span>.</p>
+                            <p>At <span class="font-bold text-accent">Amazon AGI</span>, I build the pipelines feeding <span class="font-bold text-accent">Nova</span> training runs. Petabyte-scale, multi-modal, with safety guardrails baked in. I also built the custom MCP-server + agent harness my team uses for debugging.</p>
+                            <p>Passionate about <span class="font-bold text-accent">data parallelism</span>, synthetic data generation, agent skills, and <span class="font-bold text-accent">inference engineering</span>.</p>
                         </div>
                         <div class="mt-12 pt-8 border-t grid-border space-y-3 relative z-20">
                             <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-[var(--accent-primary)] mt-[-1px]"></div>
@@ -426,23 +460,23 @@
                 </div>
                 <div class="lg:col-span-8 p-8 md:p-12 reveal">
                     <p class="text-3xl md:text-5xl lg:text-6xl font-doto italic leading-tight mb-12">
-                        I engineer the data systems and ML infrastructure that power artificial intelligence at petabyte scale.
+                        I engineer the data systems and inference infrastructure that feed and serve frontier models.
                     </p>
                     <div class="grid md:grid-cols-2 gap-12 text-sm md:text-base font-medium leading-relaxed">
                         <div class="space-y-6">
                             <p>
-                                My work focuses on building <span class="font-bold text-accent">scalable data pipelines</span> and <span class="font-bold text-accent">ML platforms</span> that handle petabyte-scale workloads with production reliability.
+                                I build <span class="font-bold text-accent">petabyte-scale, multi-modal data pipelines</span> for LLM pre-training and post-training across text, audio, image, and video. Safety guardrails (CSAM, PII, toxicity, STT diarization) baked in.
                             </p>
                             <p>
-                                I prioritize performance, cost efficiency, and automation — reducing processing times from days to hours and enabling science teams to iterate faster.
+                                I care about <span class="font-bold text-accent">throughput, determinism, and cost</span>. These are the things that decide whether science teams hit a training deadline or miss it.
                             </p>
                         </div>
                         <div class="space-y-6">
                             <p>
-                                At <span class="font-bold">Amazon AGI</span>, I built data filtering frameworks that reduced processing time by 90% and unblocked critical AI training deadlines.
+                                At <span class="font-bold">Amazon AGI</span>, I productionized the Nova pre-training eval over 100k+ hrs of licensed video (FFMPEG metadata + LLM-as-judge + ML filters) and built the custom MCP/agent harness adopted across 4+ teams.
                             </p>
                             <p>
-                                I've contributed to the ingestion of 160+ datasets (4+ PB) and designed deterministic partitioning solutions in Spark that enabled 5x larger dataset handling.
+                                Currently going deep on RoPE, attention, autoregressive/diffusion architectures, distillation, and quantization. See <a href="#works" class="font-bold text-accent underline decoration-2 underline-offset-4 hover:italic">Works</a> for my recent public projects.
                             </p>
                         </div>
                     </div>
@@ -460,100 +494,190 @@
 
             <!-- Data & ML Category -->
             <div class="p-4 md:p-6 bg-[var(--text-color)] text-[var(--bg-color)] border-b grid-border text-center text-xs md:text-sm font-bold tracking-[0.2em] uppercase font-doto reveal">
-                [ Data Engineering & ML Infrastructure ]
+                [ LLM Data Pipelines & Inference Infrastructure ]
             </div>
 
             <div class="grid grid-cols-1 border-b grid-border">
-                <!-- Project 1: AGI Data Filtering -->
+                <!-- Project 1: Nova Video-Eval Harness -->
                 <div class="flex flex-col lg:flex-row h-auto lg:h-[60vh] items-center border-b grid-border last:border-b-0 cyber-stripes game-card relative group">
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
                         <div class="mb-auto">
-                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">PETABYTE SCALE</span>
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">LLM PRE-TRAINING DATA</span>
                         </div>
-                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">AGI Data Filtering Framework</h4>
-                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Built data filtering frameworks for petabyte-scale AGI datasets, reducing processing time by 90% and unblocking science teams ahead of critical training deadlines.</p>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">Nova Pre-Training Eval</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Productionized the pre-training eval system for Nova ablation studies. AWS Step Functions orchestrating FFMPEG metadata extraction (frame rate, resolution, codec), LLM-as-judge scoring, and ML classification filters over 100,000+ hours of licensed video. Saved $4.86M in acquisition costs and 2+ weeks of manual engineering per ablation cycle.</p>
 
                         <div class="flex flex-col gap-3 mb-10">
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon AGI</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: AI/ML Data Engineer @ Amazon AGI</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Spark, AWS, S3 Datalake</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: PySpark, FFmpeg, S3, EMR, Step Functions</span>
                             </div>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
-                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
-                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
-                                <div class="text-center p-8">
-                                    <div class="text-6xl md:text-8xl font-doto font-bold text-accent opacity-20">90%</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Processing Time Reduction</div>
-                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">4+ PB</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Data Processed</div>
-                                </div>
-                            </div>
+                        <div class="relative w-full aspect-[4/3] tech-corners shadow-2xl proj-visual">
+                            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                <!-- Top HUD: input source -->
+                                <text x="20" y="22" class="pv-label">VIDEO INGEST</text>
+                                <text x="20" y="38" class="pv-readout">SRC :: licensed-corpus-v3</text>
+                                <text x="20" y="48" class="pv-readout-dim">FPS :: 24  CODEC :: h264</text>
+
+                                <!-- Filmstrip frames feeding in -->
+                                <g transform="translate(20,70)">
+                                    <rect x="0" y="0" width="44" height="32" class="pv-fill-soft"/>
+                                    <line x1="4" y1="0" x2="4" y2="32" class="pv-wire-dim"/>
+                                    <line x1="40" y1="0" x2="40" y2="32" class="pv-wire-dim"/>
+                                    <rect x="50" y="0" width="44" height="32" class="pv-fill-soft"/>
+                                    <line x1="54" y1="0" x2="54" y2="32" class="pv-wire-dim"/>
+                                    <line x1="90" y1="0" x2="90" y2="32" class="pv-wire-dim"/>
+                                    <rect x="100" y="0" width="44" height="32" class="pv-fill-soft"/>
+                                    <line x1="104" y1="0" x2="104" y2="32" class="pv-wire-dim"/>
+                                    <line x1="140" y1="0" x2="140" y2="32" class="pv-wire-dim"/>
+                                    <rect x="150" y="0" width="44" height="32" class="pv-fill-soft"/>
+                                    <rect x="200" y="0" width="44" height="32" class="pv-fill-soft" opacity="0.5"/>
+                                    <rect x="250" y="0" width="44" height="32" class="pv-fill-soft" opacity="0.3"/>
+                                </g>
+
+                                <!-- Funnel filter -->
+                                <path d="M 60 120 L 340 120 L 240 200 L 160 200 Z" class="pv-wire"/>
+                                <path d="M 80 130 L 320 130" class="pv-wire-dim"/>
+                                <path d="M 100 145 L 300 145" class="pv-wire-dim"/>
+                                <path d="M 120 160 L 280 160" class="pv-wire-dim"/>
+                                <path d="M 140 175 L 260 175" class="pv-wire-dim"/>
+
+                                <!-- Stage labels along funnel -->
+                                <text x="200" y="115" class="pv-label" text-anchor="middle">FFMPEG · LLM-AS-JUDGE · ML FILTER</text>
+
+                                <!-- Filtered output frame -->
+                                <rect x="170" y="215" width="60" height="42" class="pv-fill-soft pv-pulse"/>
+                                <rect x="174" y="219" width="52" height="34" class="pv-accent-stroke"/>
+                                <text x="200" y="241" class="pv-title" text-anchor="middle">PASS</text>
+
+                                <!-- Right side metrics -->
+                                <g transform="translate(280,215)">
+                                    <text x="0" y="0" class="pv-readout">QUALITY :: 0.94</text>
+                                    <text x="0" y="12" class="pv-readout">RES    :: 1080p+</text>
+                                    <text x="0" y="24" class="pv-readout-dim">SCORE  :: 8.7/10</text>
+                                </g>
+
+                                <!-- Bottom readout strip -->
+                                <line x1="20" y1="275" x2="380" y2="275" class="pv-wire-dim"/>
+                                <text x="20" y="290" class="pv-readout">$4.86M SAVED · 100k+ HRS PROCESSED</text>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Spark Partitioning -->
+                <!-- Project 2: MCP + Agent Harness -->
                 <div class="flex flex-col lg:flex-row-reverse h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-l grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
                         <div class="mb-auto">
-                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">DISTRIBUTED SYSTEMS</span>
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">AGENT SYSTEMS</span>
                         </div>
-                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">Deterministic Spark Partitioning</h4>
-                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Designed a scalable deterministic partitioning solution that reduced dataset processing from 48 hours to under 6 hours, enabling 5x larger dataset handling and meeting P90 24-hour delivery SLAs.</p>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">MCP + Agent Harness</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Built MCP servers and a custom agent harness (planner/executor loop, tool registry, eval harness) indexing 10+ sources: agent traces, code repos, wikis, runbooks, application logs. Adopted across 4+ teams, cutting debug cycles by 80%.</p>
 
                         <div class="flex flex-col gap-3 mb-10">
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon AGI</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: AI/ML Data Engineer @ Amazon AGI</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Apache Spark, AWS</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: MCP, planner/executor loop, tool registry</span>
                             </div>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
-                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
-                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
-                                <div class="text-center p-8">
-                                    <div class="text-5xl md:text-7xl font-doto font-bold text-accent opacity-20">48h→6h</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Processing Time</div>
-                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">5x</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Larger Dataset Capacity</div>
-                                </div>
-                            </div>
+                        <div class="relative w-full aspect-[4/3] tech-corners shadow-2xl proj-visual">
+                            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                <!-- Top HUD -->
+                                <text x="20" y="22" class="pv-label">AGENT TOPOLOGY</text>
+                                <text x="20" y="38" class="pv-readout">PLANNER :: claude-opus-4.7</text>
+                                <text x="20" y="48" class="pv-readout-dim">TOOLS :: 10  TRACES :: indexed</text>
+
+                                <!-- Central planner node -->
+                                <circle cx="200" cy="155" r="28" class="pv-fill-soft"/>
+                                <circle cx="200" cy="155" r="18" class="pv-accent-stroke pv-pulse"/>
+                                <text x="200" y="159" class="pv-title" text-anchor="middle">P</text>
+
+                                <!-- Outer tool nodes (8 around the planner) -->
+                                <g class="pv-wire">
+                                    <!-- top -->
+                                    <line x1="200" y1="127" x2="200" y2="90" class="pv-flow"/>
+                                    <circle cx="200" cy="80" r="10" class="pv-fill-soft"/>
+                                    <text x="200" y="73" class="pv-readout" text-anchor="middle">code-search</text>
+
+                                    <!-- top-right -->
+                                    <line x1="220" y1="135" x2="270" y2="100" class="pv-flow"/>
+                                    <circle cx="280" cy="92" r="10" class="pv-fill-soft"/>
+                                    <text x="290" y="85" class="pv-readout">wiki</text>
+
+                                    <!-- right -->
+                                    <line x1="228" y1="155" x2="280" y2="155" class="pv-flow"/>
+                                    <circle cx="295" cy="155" r="10" class="pv-fill-soft"/>
+                                    <text x="310" y="159" class="pv-readout">runbook</text>
+
+                                    <!-- bottom-right -->
+                                    <line x1="220" y1="175" x2="270" y2="210" class="pv-flow"/>
+                                    <circle cx="280" cy="218" r="10" class="pv-fill-soft"/>
+                                    <text x="290" y="240" class="pv-readout">logs</text>
+
+                                    <!-- bottom -->
+                                    <line x1="200" y1="183" x2="200" y2="220" class="pv-flow"/>
+                                    <circle cx="200" cy="230" r="10" class="pv-fill-soft"/>
+                                    <text x="200" y="252" class="pv-readout" text-anchor="middle">trace-db</text>
+
+                                    <!-- bottom-left -->
+                                    <line x1="180" y1="175" x2="130" y2="210" class="pv-flow"/>
+                                    <circle cx="120" cy="218" r="10" class="pv-fill-soft"/>
+                                    <text x="110" y="240" class="pv-readout" text-anchor="end">repo</text>
+
+                                    <!-- left -->
+                                    <line x1="172" y1="155" x2="120" y2="155" class="pv-flow"/>
+                                    <circle cx="105" cy="155" r="10" class="pv-fill-soft"/>
+                                    <text x="90" y="159" class="pv-readout" text-anchor="end">eval</text>
+
+                                    <!-- top-left -->
+                                    <line x1="180" y1="135" x2="130" y2="100" class="pv-flow"/>
+                                    <circle cx="120" cy="92" r="10" class="pv-fill-soft"/>
+                                    <text x="110" y="85" class="pv-readout" text-anchor="end">mcp</text>
+                                </g>
+
+                                <!-- Bottom readout strip -->
+                                <line x1="20" y1="275" x2="380" y2="275" class="pv-wire-dim"/>
+                                <text x="20" y="290" class="pv-readout">DEBUG CYCLES -80% · ADOPTED ACROSS 4+ TEAMS</text>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: CYPHAI -->
+                <!-- Project 3: Terminal-Task-Gen -->
                 <div class="flex flex-col lg:flex-row h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
                         <div class="mb-auto">
-                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">ML PLATFORM</span>
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">SYNTHETIC DATA</span>
                         </div>
-                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">CYPHAI</h4>
-                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Distributed Machine Learning platform for Robo-cup soccer implementing microservice architecture, enabling real-time simulation (YOLOv8) and communication of Sphero robots with minimal latency.</p>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">Terminal-Task-Gen</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Plug-and-play CLI producing SFT-ready synthetic terminal-task trajectories matching the <span class="text-accent">nvidia/Nemotron-Terminal-Corpus</span> schema. Three phases: skill-based task generation, Terminus 2 agent loop in tmux + Docker, filter + sharded parquet output.</p>
 
                         <div class="flex flex-col gap-3 mb-10">
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: ML Engineer</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Solo build</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: PyTorch, Flask, gRPC, WebSockets</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Pydantic, Qwen3/Llama, HF TRL, Docker</span>
                             </div>
                         </div>
 
                         <div class="mt-auto pt-6">
-                            <a href="https://github.com/neveram/CYPHAI" target="_blank" rel="noopener noreferrer" class="btn-cyber pl-6 pr-0 py-0 h-10 text-[10px] font-bold tracking-[0.2em]">
+                            <a href="https://github.com/neveram/Terminal-Task-Gen" target="_blank" rel="noopener noreferrer" class="btn-cyber pl-6 pr-0 py-0 h-10 text-[10px] font-bold tracking-[0.2em]">
                                 <span class="mr-4">View on GitHub</span>
                                 <div class="w-10 h-10 icon-box flex items-center justify-center">
                                     <svg class="w-3.5 h-3.5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -562,49 +686,163 @@
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
-                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
-                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
-                                <div class="text-center p-8">
-                                    <div class="text-4xl md:text-6xl font-doto font-bold text-accent opacity-20">YOLOv8</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Real-Time Detection</div>
-                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">gRPC</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Microservice Communication</div>
-                                </div>
-                            </div>
+                        <div class="relative w-full aspect-[4/3] tech-corners shadow-2xl proj-visual">
+                            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                <!-- Top HUD -->
+                                <text x="20" y="22" class="pv-label">SYNTHETIC PIPELINE</text>
+                                <text x="20" y="38" class="pv-readout">SPEC :: arXiv:2602.21193</text>
+                                <text x="20" y="48" class="pv-readout-dim">SCHEMA :: nemotron-terminal</text>
+
+                                <!-- Phase A: skill task generation -->
+                                <g transform="translate(20,80)">
+                                    <rect x="0" y="0" width="100" height="70" class="pv-fill-soft"/>
+                                    <text x="50" y="14" class="pv-label" text-anchor="middle">PHASE A</text>
+                                    <text x="50" y="30" class="pv-readout" text-anchor="middle">skill::compose</text>
+                                    <text x="50" y="42" class="pv-readout-dim" text-anchor="middle">3-5 primitives</text>
+                                    <text x="50" y="56" class="pv-readout-dim" text-anchor="middle">teacher::llm</text>
+                                </g>
+
+                                <!-- Arrow A -> B -->
+                                <line x1="125" y1="115" x2="145" y2="115" class="pv-wire pv-flow"/>
+                                <polygon points="145,112 145,118 152,115" class="pv-accent"/>
+
+                                <!-- Phase B: agent loop -->
+                                <g transform="translate(155,80)">
+                                    <rect x="0" y="0" width="100" height="70" class="pv-fill-soft"/>
+                                    <text x="50" y="14" class="pv-label" text-anchor="middle">PHASE B</text>
+                                    <text x="50" y="30" class="pv-readout" text-anchor="middle">terminus_2</text>
+                                    <text x="50" y="42" class="pv-readout-dim" text-anchor="middle">tmux + docker</text>
+                                    <text x="50" y="56" class="pv-readout-dim" text-anchor="middle">agent loop</text>
+                                </g>
+
+                                <!-- Arrow B -> C -->
+                                <line x1="260" y1="115" x2="280" y2="115" class="pv-wire pv-flow"/>
+                                <polygon points="280,112 280,118 287,115" class="pv-accent"/>
+
+                                <!-- Phase C: filter -->
+                                <g transform="translate(290,80)">
+                                    <rect x="0" y="0" width="90" height="70" class="pv-fill-soft"/>
+                                    <text x="45" y="14" class="pv-label" text-anchor="middle">PHASE C</text>
+                                    <text x="45" y="30" class="pv-readout" text-anchor="middle">filter</text>
+                                    <text x="45" y="42" class="pv-readout-dim" text-anchor="middle">decontam</text>
+                                    <text x="45" y="56" class="pv-readout-dim" text-anchor="middle">trajectory</text>
+                                </g>
+
+                                <!-- Arrow C -> output -->
+                                <line x1="200" y1="160" x2="200" y2="190" class="pv-wire pv-flow"/>
+                                <polygon points="197,190 203,190 200,197" class="pv-accent"/>
+
+                                <!-- Sharded parquet output -->
+                                <g transform="translate(120,205)">
+                                    <text x="80" y="0" class="pv-label" text-anchor="middle">SFT-READY · PARQUET</text>
+                                    <rect x="10" y="8" width="25" height="32" class="pv-fill-soft"/>
+                                    <rect x="42" y="8" width="25" height="32" class="pv-fill-soft"/>
+                                    <rect x="74" y="8" width="25" height="32" class="pv-fill-soft"/>
+                                    <rect x="106" y="8" width="25" height="32" class="pv-fill-soft"/>
+                                    <rect x="138" y="8" width="25" height="32" class="pv-fill-soft pv-pulse"/>
+                                    <text x="22" y="56" class="pv-readout-dim" text-anchor="middle">.000</text>
+                                    <text x="54" y="56" class="pv-readout-dim" text-anchor="middle">.001</text>
+                                    <text x="86" y="56" class="pv-readout-dim" text-anchor="middle">.002</text>
+                                    <text x="118" y="56" class="pv-readout-dim" text-anchor="middle">.003</text>
+                                    <text x="150" y="56" class="pv-readout" text-anchor="middle">.004</text>
+                                </g>
+
+                                <!-- Bottom readout strip -->
+                                <line x1="20" y1="280" x2="380" y2="280" class="pv-wire-dim"/>
+                                <text x="20" y="293" class="pv-readout">3-PHASE PIPELINE · PLUG-AND-PLAY CLI</text>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4: OSHA Automation -->
+                <!-- Project 4: Parameter-Golf-LM -->
                 <div class="flex flex-col lg:flex-row-reverse h-auto lg:h-[60vh] items-center border-b grid-border cyber-stripes game-card relative group">
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-l grid-border bg-[var(--bg-color)] transition-colors relative z-10 fade-up">
                         <div class="mb-auto">
-                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">AUTOMATION</span>
+                            <span class="inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase mb-6 cyber-tag tag-primary">PRETRAINING CORPUS</span>
                         </div>
-                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">OSHA Compliance Automation</h4>
-                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">Designed and built end-to-end automation for OSHA compliance data freeze using AWS Glue, MWAA (Airflow), Redshift, and SES — replacing a 5-day manual process across 15 DAGs with a single orchestrated workflow.</p>
+                        <h4 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-4">Parameter-Golf-LM</h4>
+                        <p class="text-sm md:text-base font-medium leading-relaxed opacity-80 mb-6">8B-token cross-source-deduplicated pretraining mixture for OpenAI's Parameter Golf tiny-LM challenge. Blends FineWeb-edu, StarCoder, and OpenWebMath; MinHash-LSH dedup; retokenized with the baseline SentencePiece vocab. Drop-in for the reference train_gpt.py.</p>
 
                         <div class="flex flex-col gap-3 mb-10">
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-primary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Data Engineer @ Amazon</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80">Role: Solo build</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-2 h-2 bg-[var(--accent-secondary)]"></span>
-                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: Airflow, AWS Glue, Redshift, SES</span>
+                                <span class="text-[10px] md:text-xs font-doto uppercase font-bold opacity-80 text-accent">Stack: PyTorch, Hugging Face, FineWeb</span>
                             </div>
+                        </div>
+
+                        <div class="mt-auto pt-6">
+                            <a href="https://huggingface.co/datasets/abhiram98/paramgolf-mix-8b" target="_blank" rel="noopener noreferrer" class="btn-cyber pl-6 pr-0 py-0 h-10 text-[10px] font-bold tracking-[0.2em]">
+                                <span class="mr-4">View on Hugging Face</span>
+                                <div class="w-10 h-10 icon-box flex items-center justify-center">
+                                    <svg class="w-3.5 h-3.5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 h-full p-8 md:p-16 overflow-hidden bg-[var(--hover-bg)] fade-up flex items-center justify-center">
-                        <div class="relative w-full aspect-[4/3] flex items-center justify-center tech-corners shadow-2xl">
-                            <div class="w-full h-full relative overflow-hidden bg-[var(--text-color)] flex items-center justify-center">
-                                <div class="text-center p-8">
-                                    <div class="text-5xl md:text-7xl font-doto font-bold text-accent opacity-20">15 DAGs</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-4">Unified Orchestration</div>
-                                    <div class="text-3xl md:text-4xl font-doto font-bold text-accent opacity-20 mt-6">5 days→1</div>
-                                    <div class="text-sm font-doto uppercase tracking-widest opacity-40 mt-2">Process Automation</div>
-                                </div>
-                            </div>
+                        <div class="relative w-full aspect-[4/3] tech-corners shadow-2xl proj-visual">
+                            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                <!-- Top HUD -->
+                                <text x="20" y="22" class="pv-label">CORPUS MIXTURE</text>
+                                <text x="20" y="38" class="pv-readout">TARGET :: 8.00B tokens</text>
+                                <text x="20" y="48" class="pv-readout-dim">VOCAB :: sentencepiece-baseline</text>
+
+                                <!-- 3 source streams entering from left -->
+                                <g transform="translate(20,75)">
+                                    <rect x="0" y="0" width="80" height="22" class="pv-fill-soft"/>
+                                    <text x="6" y="14" class="pv-readout">fineweb-edu</text>
+                                    <rect x="0" y="50" width="80" height="22" class="pv-fill-soft"/>
+                                    <text x="6" y="64" class="pv-readout">starcoder</text>
+                                    <rect x="0" y="100" width="80" height="22" class="pv-fill-soft"/>
+                                    <text x="6" y="114" class="pv-readout">openwebmath</text>
+                                </g>
+
+                                <!-- Stream lines converging -->
+                                <path d="M 100 86 L 175 150" class="pv-wire pv-flow"/>
+                                <path d="M 100 136 L 175 150" class="pv-wire pv-flow"/>
+                                <path d="M 100 186 L 175 150" class="pv-wire pv-flow"/>
+
+                                <!-- Dedup chokepoint -->
+                                <g transform="translate(160,125)">
+                                    <rect x="0" y="0" width="80" height="50" class="pv-fill-soft"/>
+                                    <text x="40" y="16" class="pv-label" text-anchor="middle">DEDUP</text>
+                                    <text x="40" y="32" class="pv-readout" text-anchor="middle">minhash-lsh</text>
+                                    <text x="40" y="44" class="pv-readout-dim" text-anchor="middle">cross-source</text>
+                                </g>
+
+                                <!-- Out to shards -->
+                                <line x1="240" y1="150" x2="290" y2="150" class="pv-wire pv-flow"/>
+                                <polygon points="290,147 290,153 297,150" class="pv-accent"/>
+
+                                <!-- Token meter (vertical fill) -->
+                                <g transform="translate(305,75)">
+                                    <text x="35" y="0" class="pv-label" text-anchor="middle">TOKENS</text>
+                                    <rect x="20" y="8" width="30" height="140" class="pv-wire" fill="none"/>
+                                    <rect x="22" y="20" width="26" height="126" fill="var(--accent-primary)" opacity="0.7"/>
+                                    <text x="35" y="162" class="pv-title" text-anchor="middle">8B</text>
+                                </g>
+
+                                <!-- Sharded bins at bottom -->
+                                <g transform="translate(50,220)">
+                                    <text x="150" y="0" class="pv-label" text-anchor="middle">.BIN SHARDS · 10⁸ tokens each</text>
+                                    <rect x="0" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="40" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="80" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="120" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="160" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="200" y="10" width="34" height="28" class="pv-fill-soft"/>
+                                    <rect x="240" y="10" width="34" height="28" class="pv-fill-soft pv-pulse"/>
+                                </g>
+
+                                <!-- Bottom readout strip -->
+                                <line x1="20" y1="278" x2="380" y2="278" class="pv-wire-dim"/>
+                                <text x="20" y="291" class="pv-readout">DROP-IN FOR train_gpt.py · ~30M PARAM REGIME</text>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -620,10 +858,10 @@
                 </div>
                 <div class="lg:col-span-8 p-8 md:p-12 reveal flex flex-col justify-center">
                     <p class="text-xl md:text-3xl font-doto font-medium leading-relaxed mb-6">
-                        I build the infrastructure that transforms raw data into production ML systems — from ingestion to model training to deployment.
+                        I build the infrastructure that transforms raw data into production ML systems, from ingestion to model training to deployment.
                     </p>
                     <p class="text-sm md:text-base font-medium leading-relaxed opacity-70">
-                        My approach focuses on scalability, reliability, and cost efficiency — engineering systems that process petabytes while meeting strict SLAs.
+                        My approach focuses on scalability, reliability, and cost efficiency, engineering systems that process petabytes while meeting strict SLAs.
                     </p>
                 </div>
             </div>
@@ -631,77 +869,44 @@
             <div class="grid md:grid-cols-3">
                 <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
                     <span class="text-3xl font-serif italic block mb-8 text-accent">01</span>
-                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Data Engineering</h4>
-                    <p class="text-sm font-medium opacity-70 mb-8">Building robust pipelines that ingest, transform, and deliver data at scale with production reliability.</p>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Pre-Training Data</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Petabyte-scale, multi-modal corpora. Ingestion, dedup, safety filtering, provenance.</p>
                     <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
-                        <li>> ETL/ELT Pipeline Design</li>
-                        <li>> Distributed Processing (Spark)</li>
-                        <li>> Data Quality & Governance</li>
+                        <li>> Multi-modal pipelines (text/audio/image/video)</li>
+                        <li>> MinHash-LSH dedup · CSAM · PII · toxicity</li>
+                        <li>> Deterministic partitioning</li>
                     </ul>
                 </div>
                 <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.1s;">
                     <span class="text-3xl font-serif italic block mb-8 text-accent">02</span>
-                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">ML Infrastructure</h4>
-                    <p class="text-sm font-medium opacity-70 mb-8">Designing the platforms and tooling that enable ML teams to train, evaluate, and deploy models efficiently.</p>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Post-Training & Eval</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Synthetic data generation, eval harnesses, LLM-as-judge. The loop between model and benchmark.</p>
                     <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
-                        <li>> Training Pipeline Optimization</li>
-                        <li>> Feature Engineering at Scale</li>
-                        <li>> Model Serving & Monitoring</li>
+                        <li>> SFT trajectory generation</li>
+                        <li>> LLM-as-judge + ML classifier filtering</li>
+                        <li>> Ablation harnesses</li>
                     </ul>
                 </div>
                 <div class="p-8 md:p-12 hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.2s;">
                     <span class="text-3xl font-serif italic block mb-8 text-accent">03</span>
-                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Cloud Architecture</h4>
-                    <p class="text-sm font-medium opacity-70 mb-8">Orchestrating cloud-native solutions that balance performance, cost, and operational excellence.</p>
+                    <h4 class="text-2xl font-doto font-bold mb-4 uppercase tracking-tighter">Inference & Agents</h4>
+                    <p class="text-sm font-medium opacity-70 mb-8">Serving foundation models efficiently and wiring them into agents that actually do work.</p>
                     <ul class="text-xs font-bold font-doto tracking-wide uppercase opacity-50 space-y-3 list-none">
-                        <li>> AWS Services (Glue, SFN, Lambda)</li>
-                        <li>> Kubernetes & Docker</li>
-                        <li>> Workflow Orchestration</li>
+                        <li>> vLLM · DeepSpeed · stage-level GPU scheduling</li>
+                        <li>> MCP servers · agent harnesses</li>
+                        <li>> Planner/executor loops · tool registries</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Tools Block -->
-            <div class="border-t grid-border p-8 md:p-12 bg-[var(--text-color)] text-[var(--bg-color)] reveal relative">
-                <div class="absolute inset-0 cyber-stripes opacity-10 pointer-events-none"></div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                    <div class="md:col-span-1">
-                        <h4 class="text-sm font-bold tracking-[0.4em] uppercase font-doto text-accent">Tools & Stack</h4>
-                    </div>
-                    <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
-                        <div>
-                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">Compute</span>
-                            <span class="block font-serif italic text-xl">Spark, Flink, Ray</span>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">ML</span>
-                            <span class="block font-serif italic text-xl">PyTorch, MLFlow</span>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] font-doto uppercase tracking-widest opacity-50 mb-2">Orchestration</span>
-                            <span class="block font-serif italic text-xl">Airflow, Kubernetes</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="border-b grid-border bg-[var(--bg-color)]">
-            <div class="grid grid-cols-1 lg:grid-cols-12 border-b grid-border">
-                <div class="lg:col-span-4 p-8 md:p-12 border-b lg:border-b-0 lg:border-r grid-border reveal relative">
-                    <div class="absolute right-8 top-8 text-[10px] font-doto opacity-30">[ EXP ]</div>
-                    <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-4 font-doto">// CAREER LOG</h2>
-                    <h3 class="text-4xl md:text-5xl font-doto text-accent font-bold tracking-tighter uppercase">Experience</h3>
-                </div>
-                <div class="lg:col-span-8 p-8 md:p-12 reveal flex flex-col justify-center bg-[var(--hover-bg)]">
-                    <div class="border border-[var(--accent-primary)] p-6 relative bg-[var(--bg-color)]" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
-                        <h4 class="text-[10px] font-doto text-accent tracking-[0.2em] font-bold uppercase mb-4 opacity-80">> CURRENT FOCUS</h4>
-                        <p class="text-sm md:text-base font-medium">
-                            Building petabyte-scale data systems and ML infrastructure at Amazon AGI. Engineering distributed pipelines that power the next generation of artificial general intelligence.
-                        </p>
-                    </div>
-                </div>
+            <div class="p-8 md:p-12 border-b grid-border reveal relative">
+                <div class="absolute right-12 top-12 text-[10px] font-doto opacity-30">[ EXP ]</div>
+                <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-4 font-doto">// CAREER LOG</h2>
+                <h3 class="text-4xl md:text-5xl font-doto text-accent font-bold tracking-tighter uppercase">Experience</h3>
             </div>
 
             <!-- Jobs List -->
@@ -714,12 +919,13 @@
                         <span class="text-sm font-heading font-bold uppercase text-accent">Amazon AGI</span>
                     </div>
                     <div class="md:col-span-8 p-6 md:p-8">
-                        <h4 class="text-2xl font-serif italic mb-4">Data Engineer</h4>
+                        <h4 class="text-2xl font-serif italic mb-4">AI/ML Data Engineer</h4>
                         <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
-                            <li><span class="opacity-50">></span> Built data filtering frameworks for petabyte-scale AGI datasets, 90% processing time reduction</li>
-                            <li><span class="opacity-50">></span> Designed deterministic Spark partitioning: 48h → 6h, enabling 5x larger datasets</li>
-                            <li><span class="opacity-50">></span> Led data quality assessment via AWS services delivering $4.86M in cost savings</li>
-                            <li><span class="opacity-50">></span> Contributed to ingestion of 160+ datasets (4+ PB) into S3 datalake</li>
+                            <li><span class="opacity-50">></span> Engineered petabyte-scale pipelines for multi-modal datasets (text/audio/image/video) with PySpark, FFmpeg, and AWS (S3, EMR, Glue, Step Functions), feeding 4+ LLM pre-training runs across Amazon Nova</li>
+                            <li><span class="opacity-50">></span> Productionized the Nova pre-training eval system (Step Functions + FFMPEG metadata extraction, LLM-as-judge scoring, ML classification filters) over 100k+ hrs of licensed video. Saved $4.86M and 2+ weeks per ablation cycle</li>
+                            <li><span class="opacity-50">></span> Designed deterministic partitioning strategy that eliminated data skew and cut processing latency 70% (p95 4h to 72min), unblocking AGI science team deadlines</li>
+                            <li><span class="opacity-50">></span> Integrated multimodal compute engine to enrich metadata + enforce AI safety guardrails: CSAM detection, PII anonymization, toxicity filtering, STT diarization, waveform extraction</li>
+                            <li><span class="opacity-50">></span> Built MCP servers + custom agent harness (planner/executor loop, tool registry, eval harness) indexing 10+ sources. Adopted across 4+ teams, 80% debug-cycle reduction</li>
                         </ul>
                     </div>
                 </div>
@@ -731,10 +937,9 @@
                         <span class="text-sm font-heading font-bold uppercase text-accent">Coinbase</span>
                     </div>
                     <div class="md:col-span-8 p-6 md:p-8">
-                        <h4 class="text-2xl font-serif italic mb-4">Data Engineer (Contract)</h4>
+                        <h4 class="text-2xl font-serif italic mb-4">Data Engineer</h4>
                         <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
-                            <li><span class="opacity-50">></span> Built monitoring pipelines with Airflow & Snowflake for real-time violation detection across 10+ services</li>
-                            <li><span class="opacity-50">></span> Developed dashboards using SQL & Looker, improving pipeline health by 40%</li>
+                            <li><span class="opacity-50">></span> Architected multi-engine Airflow orchestration across 4+ ML tools. Migrated 200+ legacy DAGs and improved feature freshness and model accuracy by 15%</li>
                         </ul>
                     </div>
                 </div>
@@ -746,11 +951,10 @@
                         <span class="text-sm font-heading font-bold uppercase text-accent">Apple</span>
                     </div>
                     <div class="md:col-span-8 p-6 md:p-8">
-                        <h4 class="text-2xl font-serif italic mb-4">Software Data Engineer (Contract)</h4>
+                        <h4 class="text-2xl font-serif italic mb-4">ML Platform Engineer</h4>
                         <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
-                            <li><span class="opacity-50">></span> Engineered large-scale Spark jobs for ML model training pipelines (PyTorch, XGBoost)</li>
-                            <li><span class="opacity-50">></span> Built ELT pipelines monitoring 20+ data pipelines using Splunk & Grafana</li>
-                            <li><span class="opacity-50">></span> Deployed distributed SQL engine (Dremio) on Kubernetes across S3 & Snowflake</li>
+                            <li><span class="opacity-50">></span> Shipped features on the foundation-model inference and training platform: batch inference servers on Ray endpoints, accelerated DeepSpeed PyTorch training, and stage-level GPU scheduling with profile observability. Eliminated 15% idle GPU spend across clusters</li>
+                            <li><span class="opacity-50">></span> Implemented multi-modal feature transformations with Iceberg, Spark, and Flink for registering, storing, and discovering features across ML workloads (MLflow), serving 100+ feature sets with reduced data movement across teams</li>
                         </ul>
                     </div>
                 </div>
@@ -759,14 +963,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
                     <div class="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r grid-border flex flex-col justify-between">
                         <span class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-50 mb-2 font-doto">Jun 2019 – Dec 2021</span>
-                        <span class="text-sm font-heading font-bold uppercase text-accent">Wipro Healthcare</span>
+                        <span class="text-sm font-heading font-bold uppercase text-accent">Wipro</span>
                     </div>
                     <div class="md:col-span-8 p-6 md:p-8">
-                        <h4 class="text-2xl font-serif italic mb-4">Software Engineer - Data</h4>
+                        <h4 class="text-2xl font-serif italic mb-4">Software Engineer, Data</h4>
                         <ul class="text-sm font-medium space-y-2 opacity-80 list-none">
-                            <li><span class="opacity-50">></span> Built PHI anonymization pipelines leveraging NLP (SpaCy NER) for HIPAA compliance</li>
-                            <li><span class="opacity-50">></span> Developed health data portal using Python (Flask, D3.js), Docker & Postgres</li>
-                            <li><span class="opacity-50">></span> Engineered ETL pipelines in PySpark integrating 10+ data sources</li>
+                            <li><span class="opacity-50">></span> Designed HIPAA-compliant Medallion architecture with auto-scaling Step Functions for PII anonymization + CI/CD on AWS SageMaker. Cut NLP (SpaCy NER) deployment time 70% for batch loads</li>
+                            <li><span class="opacity-50">></span> Implemented feature engineering for healthcare predictive models (re-admission risk, staff scheduling, revenue assurance) with Pandas, NumPy, pydicom, scikit-learn</li>
+                            <li><span class="opacity-50">></span> Deployed distributed SQL engine (Dremio) on Kubernetes. Optimized cross-platform queries over S3 + Snowflake</li>
                         </ul>
                     </div>
                 </div>
@@ -783,10 +987,11 @@
                     <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners">
                         <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">AI / ML</h4>
                         <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
-                            <li>> PyTorch & Ray</li>
-                            <li>> MLFlow & LangChain</li>
-                            <li>> pandas & NumPy & sklearn</li>
-                            <li>> RAG Systems</li>
+                            <li>> PyTorch · JAX · TensorFlow</li>
+                            <li>> Hugging Face · TRL · PEFT</li>
+                            <li>> vLLM · llama.cpp</li>
+                            <li>> Ray · SageMaker · Evals</li>
+                            <li>> FAISS · RAG · MCP</li>
                         </ul>
                     </div>
 
@@ -794,36 +999,80 @@
                     <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners" style="transition-delay: 0.1s;">
                         <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">Data Engineering</h4>
                         <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
-                            <li>> Spark & Kafka & Flink</li>
-                            <li>> Airflow & AWS Glue</li>
-                            <li>> Snowflake & BigQuery</li>
-                            <li>> Redshift & Postgres</li>
+                            <li>> Spark · Flink · Kafka</li>
+                            <li>> Airflow · AWS Glue · EMR</li>
+                            <li>> Iceberg · Parquet</li>
+                            <li>> Redshift · Postgres · Snowflake</li>
+                            <li>> Pydantic · MLflow</li>
                         </ul>
                     </div>
 
                     <!-- Infrastructure -->
                     <div class="reveal p-6 bg-[var(--bg-color)] border grid-border tech-corners" style="transition-delay: 0.2s;">
-                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">Infrastructure</h4>
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-10 font-doto text-accent">Languages & Infra</h4>
                         <ul class="space-y-6 text-sm md:text-base font-medium opacity-80 list-none font-doto">
-                            <li>> Docker & Kubernetes</li>
-                            <li>> AWS (Lambda, SFN, S3)</li>
-                            <li>> Linux & Git</li>
-                            <li>> Splunk & Grafana</li>
+                            <li>> Python · C++ · CUDA · JS</li>
+                            <li>> Docker · Kubernetes</li>
+                            <li>> AWS (S3, EMR, SFN, Lambda)</li>
+                            <li>> Step Functions · FFmpeg</li>
+                            <li>> Linux · Git</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Certifications -->
+                <!-- Interests -->
                 <div class="mt-16 reveal">
+                    <div class="p-6 bg-[var(--bg-color)] border grid-border tech-corners">
+                        <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 font-doto text-accent">Interests</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">RoPE</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Attention</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Autoregressive / Diffusion</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Distillation</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Fine-Tuning Optimizers</span>
+                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Quantization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mt-8 reveal">
                     <div class="p-6 bg-[var(--bg-color)] border grid-border tech-corners">
                         <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 font-doto text-accent">Certifications</h4>
                         <div class="flex flex-wrap gap-4">
-                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">Apache Airflow Champion</span>
-                            <span class="px-4 py-2 border grid-border text-sm font-doto font-bold">AWS Solutions Architect</span>
+                            <a href="https://www.credly.com/badges/6bb7b64a-dfab-4f60-b7b0-629de8d21e67/public_url" target="_blank" rel="noopener noreferrer" title="Awarded for contributions to the Airflow open source community and part of Astronomer's Airflow cohort" class="px-4 py-2 border grid-border text-sm font-doto font-bold hover:text-accent hover:border-[var(--accent-primary)] transition-colors">Apache Airflow Champion ↗</a>
+                            <a href="https://www.credly.com/badges/48f46207-937e-419e-a913-15f8c6af6030/public_url" target="_blank" rel="noopener noreferrer" title="End-to-end applied knowledge of AWS services with depth on ML services" class="px-4 py-2 border grid-border text-sm font-doto font-bold hover:text-accent hover:border-[var(--accent-primary)] transition-colors">AWS Solutions Architect ↗</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="border-b grid-border bg-[var(--bg-color)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 border-b grid-border">
+                <div class="lg:col-span-4 p-8 md:p-12 border-b lg:border-b-0 lg:border-r grid-border reveal relative">
+                    <div class="absolute right-8 top-8 text-[10px] font-doto opacity-30">[ LOG ]</div>
+                    <h2 class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold mb-4 font-doto">// FIELD NOTES</h2>
+                    <h3 class="text-4xl md:text-5xl font-doto text-accent font-bold tracking-tighter uppercase"><span class="text-accent">Blog</span></h3>
+                </div>
+                <div class="lg:col-span-8 p-8 md:p-12 reveal flex flex-col justify-center">
+                    <p class="text-xl md:text-3xl font-doto font-medium leading-relaxed mb-6">
+                        Notes on systems I've built, papers I'm reading, and the parts of ML infra that are harder than they look.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BLOG:POSTS:START -->
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <a href="blog/hello-world.html" class="block p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal group">
+                    <span class="text-[10px] font-doto tracking-[0.2em] uppercase opacity-50 font-bold">Jun 22, 2026</span>
+                    <h4 class="text-2xl font-heading font-bold uppercase tracking-tight mt-3 mb-3 group-hover:text-accent transition-colors">Hello, World</h4>
+                    <p class="text-sm opacity-70 leading-relaxed">Why I&#x27;m starting this blog and what I&#x27;ll write about. LLM data pipelines, inference engineering, and the parts of ML infra that are harder than they look.</p>
+                    <span class="inline-block mt-4 text-[10px] font-doto tracking-[0.2em] uppercase font-bold text-accent">Read →</span>
+                </a>
+            </div>
+            <!-- BLOG:POSTS:END -->
         </section>
 
         <!-- Resume CTA Section -->
@@ -833,7 +1082,7 @@
                 <h2 class="text-[10px] tracking-[0.5em] uppercase opacity-50 mb-8 font-bold font-doto">// DOCUMENTATION</h2>
                 <h3 class="text-5xl md:text-7xl font-doto text-accent font-bold tracking-tighter uppercase mb-10">Beyond Code</h3>
                 <p class="text-base md:text-xl font-medium leading-relaxed opacity-80 mb-12">
-                    A deeper look into my experience engineering distributed data systems, ML infrastructure, and intelligent automation at companies like Amazon, Apple, and Coinbase.
+                    A deeper look at the LLM data pipelines, agent systems, and inference infrastructure I've built at Amazon AGI, Apple, and on my own.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
                     <a href="Assets/Abhiram-Yenugadhati-Resume.pdf" target="_blank" class="group w-full sm:w-auto inline-flex items-center justify-between sm:justify-center btn-cyber text-[var(--text-color)] pl-6 pr-0 py-0 h-12 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 cursor-none" style="background: var(--bg-color); border-color: var(--bg-color);">
@@ -862,14 +1111,14 @@
                 <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r grid-border hover:bg-[var(--hover-bg)] transition-colors reveal">
                     <span class="text-3xl font-serif italic block mb-4 text-accent">MS</span>
                     <h4 class="text-xl font-heading font-bold uppercase mb-2">San Jose State University</h4>
-                    <p class="text-sm font-medium opacity-70 mb-2">Software Engineering — GPA: 3.7/4.0</p>
+                    <p class="text-sm font-medium opacity-70 mb-2">Software Engineering · GPA 3.7/4.0</p>
                     <p class="text-xs font-doto opacity-50 uppercase tracking-wide">Jan 2022 – Dec 2023</p>
                     <p class="text-xs font-medium opacity-60 mt-4">Enterprise Distributed Systems, Advanced Data Mining, Machine Learning</p>
                 </div>
                 <div class="p-8 md:p-12 hover:bg-[var(--hover-bg)] transition-colors reveal" style="transition-delay: 0.1s;">
                     <span class="text-3xl font-serif italic block mb-4 text-accent">B.Tech</span>
                     <h4 class="text-xl font-heading font-bold uppercase mb-2">Vardhaman College of Engineering</h4>
-                    <p class="text-sm font-medium opacity-70 mb-2">Computer Science — GPA: 3.8/4.0</p>
+                    <p class="text-sm font-medium opacity-70 mb-2">Computer Science · GPA 3.8/4.0</p>
                     <p class="text-xs font-doto opacity-50 uppercase tracking-wide">Aug 2015 – May 2019</p>
                     <p class="text-xs font-medium opacity-60 mt-4">Data Structures, Data Mining, Operating Systems, Design Patterns</p>
                 </div>

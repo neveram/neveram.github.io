@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World · Abhiram Yenugadhati</title>
+    <meta name="description" content="Why I&#x27;m starting this blog and what I&#x27;ll write about. LLM data pipelines, inference engineering, and the parts of ML infra that are harder than they look.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                heading: ['Space Grotesk', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
+                doto: ['Doto', 'sans-serif'],
+            }}}
+        }
+    </script>
+    <style>
+        :root {
+            --bg-color: #F8F8F8;
+            --text-color: #0A0A0A;
+            --accent-primary: #00FF88;
+            --accent-secondary: #2BD17E;
+            --border-color: rgba(0, 0, 0, 0.2);
+            --hover-bg: rgba(0, 0, 0, 0.05);
+        }
+        html.dark {
+            --bg-color: #0A0A0A;
+            --text-color: #F4F4F0;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --hover-bg: rgba(255, 255, 255, 0.05);
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+        }
+        .text-accent { color: var(--accent-primary); }
+        .grid-border { border-color: var(--border-color); }
+        .prose-post h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .prose-post h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1rem; letter-spacing: -0.01em; }
+        .prose-post h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose-post p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.05rem; }
+        .prose-post a { color: var(--accent-secondary); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+        .prose-post a:hover { font-style: italic; }
+        .prose-post strong { font-weight: 700; }
+        .prose-post code { font-family: 'Doto', monospace; background: var(--hover-bg); padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.95em; }
+        .prose-post pre { background: var(--hover-bg); padding: 1rem; overflow-x: auto; border: 1px solid var(--border-color); margin: 1.5rem 0; }
+        .prose-post pre code { background: transparent; padding: 0; }
+        .prose-post ul, .prose-post ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .prose-post li { margin-bottom: 0.5rem; line-height: 1.7; }
+        .prose-post ul li { list-style-type: square; }
+        .prose-post blockquote { border-left: 3px solid var(--accent-primary); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; opacity: 0.85; }
+        .prose-post hr { border: none; border-top: 1px solid var(--border-color); margin: 2.5rem 0; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <nav class="border-b grid-border" style="background-color: var(--bg-color);">
+        <div class="max-w-[1800px] mx-auto px-5 md:px-8 py-5 flex items-center justify-between border-x grid-border">
+            <a href="../index.html" class="text-2xl font-doto font-bold tracking-tight hover:text-accent transition-colors">AY</a>
+            <div class="flex gap-4 font-doto text-[10px] tracking-[0.2em] uppercase font-bold">
+                <a href="../index.html#blog" class="hover:text-accent">← All Posts</a>
+                <a href="../index.html" class="hover:text-accent">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-16 md:py-24">
+        <div class="mb-8 font-doto text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold">
+            // JUNE 22, 2026
+        </div>
+        <article class="prose-post">
+<h1>Hello, World</h1>
+<p>I built this blog to write down the things I learn while shipping LLM data
+pipelines and inference systems at scale. Not tutorials. Not hype. The actual
+sharp edges. The kind that cost a week and don't show up in the README.</p>
+<h2>What I'll write about</h2>
+<ul>
+<li><strong>Pre-training data</strong>: dedup that doesn't lie, multi-modal pipelines, the
+  unglamorous work of safety filtering at petabyte scale.</li>
+<li><strong>Post-training</strong>: synthetic data generation, eval harnesses, the question
+  every ablation eventually asks ("did the data move the model, or did we
+  just retrain it?").</li>
+<li><strong>Inference</strong>: vLLM internals, KV cache layout, the tradeoffs nobody puts
+  in the README.</li>
+<li><strong>Agents</strong>: MCP, planner/executor loops, why most agent harnesses don't
+  survive contact with real codebases.</li>
+</ul>
+<p>If you're working in this area and want to compare notes, my email is in the
+footer.</p>
+<h2>A note on style</h2>
+<p>I'm going to keep posts short. If I can't explain it in a thousand words I
+probably don't understand it yet.</p>
+        </article>
+
+        <hr class="my-16 border-[var(--border-color)]">
+
+        <div class="font-doto text-[10px] tracking-[0.2em] uppercase opacity-50 font-bold">
+            <a href="../index.html#blog" class="hover:text-accent">← Back to all posts</a>
+        </div>
+    </main>
+
+    <footer class="border-t grid-border py-12 px-8 text-center">
+        <p class="text-[10px] font-doto tracking-[0.2em] uppercase opacity-50">© 2026 Abhiram Yenugadhati</p>
+    </footer>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    </script>
+</body>
+</html>

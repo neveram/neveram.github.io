@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog · Abhiram Yenugadhati</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            doto: ['Doto', 'sans-serif'],
+        }}}}
+    </script>
+    <style>
+        :root { --bg-color: #F8F8F8; --text-color: #0A0A0A; --accent-primary: #00FF88; --border-color: rgba(0,0,0,0.2); --hover-bg: rgba(0,0,0,0.05); }
+        html.dark { --bg-color: #0A0A0A; --text-color: #F4F4F0; --border-color: rgba(255,255,255,0.2); --hover-bg: rgba(255,255,255,0.05); }
+        body { background: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; }
+        .text-accent { color: var(--accent-primary); }
+        .grid-border { border-color: var(--border-color); }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <nav class="border-b grid-border" style="background-color: var(--bg-color);">
+        <div class="max-w-[1800px] mx-auto px-5 md:px-8 py-5 flex items-center justify-between border-x grid-border">
+            <a href="../index.html" class="text-2xl font-doto font-bold tracking-tight hover:text-accent transition-colors">AY</a>
+            <a href="../index.html" class="font-doto text-[10px] tracking-[0.2em] uppercase font-bold hover:text-accent">← Home</a>
+        </div>
+    </nav>
+    <header class="border-b grid-border p-8 md:p-16">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-bold font-doto mb-4">// FIELD NOTES</p>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold uppercase tracking-tighter">Blog</h1>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto">
+        
+        <a href="hello-world.html" class="block p-8 md:p-12 border-b grid-border hover:bg-[var(--hover-bg)] transition-colors group">
+            <span class="text-[10px] font-doto tracking-[0.2em] uppercase opacity-50 font-bold">June 22, 2026</span>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold uppercase tracking-tight mt-3 mb-3 group-hover:text-accent transition-colors">Hello, World</h2>
+            <p class="text-base opacity-70 leading-relaxed">Why I&#x27;m starting this blog and what I&#x27;ll write about. LLM data pipelines, inference engineering, and the parts of ML infra that are harder than they look.</p>
+            <span class="inline-block mt-4 text-[10px] font-doto tracking-[0.2em] uppercase font-bold text-accent">Read →</span>
+        </a>
+    </main>
+    <footer class="border-t grid-border py-12 px-8 text-center mt-16">
+        <p class="text-[10px] font-doto tracking-[0.2em] uppercase opacity-50">© 2026 Abhiram Yenugadhati</p>
+    </footer>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    </script>
+</body>
+</html>
