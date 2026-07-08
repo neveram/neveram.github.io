@@ -319,15 +319,6 @@
             background: var(--hover-bg);
         }
 
-        #sakura-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 140; overflow: hidden; }
-        .sakura-wrapper { position: absolute; top: -10%; animation: sakura-fall linear infinite; }
-        .sakura-sway { animation: sakura-sway ease-in-out infinite alternate; }
-        .sakura-petal { width: 12px; height: 12px; background: var(--accent-primary); opacity: 0.4; border-radius: 50% 0 50% 0; animation: sakura-spin linear infinite; }
-        .dark .sakura-petal { background: var(--accent-primary); opacity: 0.3; }
-        @keyframes sakura-fall { 0% { transform: translateY(-10vh) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
-        @keyframes sakura-sway { 0% { transform: translateX(-30px); } 100% { transform: translateX(30px); } }
-        @keyframes sakura-spin { 0% { transform: rotateZ(0deg) rotateY(0deg); } 100% { transform: rotateZ(360deg) rotateY(180deg); } }
-
         .cinematic-slice { background-size: cover; background-position: center; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
     </style>
 </head>
@@ -1316,51 +1307,8 @@
             isCinematicPlaying = false;
         }
 
-        // --- Particle Effect ---
-        function createParticles() {
-            const container = document.createElement('div');
-            container.id = 'sakura-container';
-            document.body.appendChild(container);
-
-            const petalCount = 25;
-
-            for (let i = 0; i < petalCount; i++) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'sakura-wrapper';
-
-                const left = Math.random() * 100;
-                const fallDuration = 8 + Math.random() * 7;
-                const fallDelay = Math.random() * -15;
-
-                wrapper.style.left = `${left}%`;
-                wrapper.style.animationDuration = `${fallDuration}s`;
-                wrapper.style.animationDelay = `${fallDelay}s`;
-
-                const sway = document.createElement('div');
-                sway.className = 'sakura-sway';
-                const swayDuration = 2 + Math.random() * 3;
-                sway.style.animationDuration = `${swayDuration}s`;
-                sway.style.animationDelay = `${Math.random() * -5}s`;
-
-                const petal = document.createElement('div');
-                petal.className = 'sakura-petal';
-                const spinDuration = 3 + Math.random() * 5;
-                const scale = 0.3 + Math.random() * 0.5;
-                const opacity = 0.3 + Math.random() * 0.4;
-
-                petal.style.animationDuration = `${spinDuration}s`;
-                petal.style.transform = `scale(${scale})`;
-                petal.style.opacity = opacity;
-
-                sway.appendChild(petal);
-                wrapper.appendChild(sway);
-                container.appendChild(wrapper);
-            }
-        }
-
         // Initialize
         window.addEventListener('load', () => {
-            createParticles();
             setTimeout(triggerCinematic, 1000);
         });
     </script>
